@@ -73,5 +73,3 @@ ALTER USER auditor2
 PROFILE auditor;
 GRANT CREATE SESSION TO auditor2;
 
-
-
