@@ -29,6 +29,7 @@ CREATE USER analyst2 IDENTIFIED BY analyst2;
 CREATE USER auditor2 IDENTIFIED BY auditor2;
 
 
+
 ALTER USER developer 
 PROFILE developer; 
 GRANT CREATE SESSION TO developer;
