@@ -51,27 +51,49 @@ USER_NETWORK_ACL_PRIVILEGES : muestra el estado de los privilegios de red para q
 PRIVILEGIOS Y ROLES DE USUARIOS 
 ====================================================================================================================================
 ALL_COL_PRIVS: describe todas las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el propietario, otorgante o concesionario del objeto
+
 ALL_COL_PRIVS_MADE : enumera las concesiones de objetos de columna para las cuales el usuario actual es propietario o otorgante de objetos.
+
 ALL_COL_PRIVS_RECD : describe las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el concesionario
+
 ALL_TAB_PRIVS : enumera las concesiones en objetos donde el usuario o PUBLIC es el concesionario
+
 ALL_TAB_PRIVS_MADE : enumera todas las concesiones de objetos realizadas por el usuario actual o realizadas en los objetos propiedad de El usuario actual.
+
 ALL_TAB_PRIVS_RECD : enumera las concesiones de objetos para las cuales el usuario o PUBLIC es el concesionario
+
 DBA_COL_PRIVS : describe todas las concesiones de objetos de columna en la base de datos
+
 DBA_TAB_PRIVS : enumera todas las concesiones de todos los objetos en la base de datos
+
 DBA_ROLES : esta vista enumera todos los roles que existen en la base de datos, incluido el seguro Roles de aplicación. Tenga en cuenta que no incluye la función PUBLIC.
+
 DBA_ROLE_PRIVS : Muestra los papeles otorgados a los usuarios y roles
+
 DBA_SYS_PRIVS : privilegios del sistema Listas otorgados a los usuarios y roles
+
 SESSION_ROLES : enumera todas las funciones que están habilitadas para el usuario actual. Tenga en cuenta que no incluye la función PUBLIC.
+
 ROLE_ROLE_PRIVS: Esta vista describe los roles otorgados a otros roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+
 ROLE_SYS_PRIVS : esta vista contiene información sobre los privilegios del sistema otorgados a los roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+
 ROLE_TAB_PRIVS : esta vista contiene información sobre los privilegios de objeto otorgados a los roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+
 USER_COL_PRIVS : describe las concesiones de objetos de columna para las cuales el usuario actual es el propietario del objeto, el otorgante o el concesionario
+
 USER_COL_PRIVS_MADE : describe las concesiones de objetos de columna para las cuales el usuario actual es el otorgante
-USER_COL_PRIVS_RECD: Describe las concesiones de objetos de columna para las cuales el usuario actual es el concesionario
+
+USER_COL_PRIVS_RECD: Describe las concesiones de objetos de columna para las cuales el usuario actual es el concesionari
+
 USER_ROLE_PRIVS : enumera los roles otorgados al usuario actual
+
 USER_TAB_PRIVS: enumera las concesiones en todos los objetos donde el usuario actual es el concesionario
+
 USER_SYS_PRIVS : enumera los privilegios del sistema otorgados al usuario actual
-USER_TAB_PRIVS_MADE: enumera las concesiones en todos los objetos propiedad del usuario actual
+
 USER_TAB_PRIVS_RECD: listas de objetos subvenciones para el cual el usuario actual es el concesionario
+
 session_privs: Lista los privilegios que actualmente están habilitados para los usuarios
+
 SESSION_ROLES: se enumeran las funciones que actualmente están habilitados para el usuario
