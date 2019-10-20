@@ -22,25 +22,31 @@ SYS es el propietario de la base de datos y el propietario del diccionario de da
 Nunca cree objetos en el esquema SYS.
 Los objetos que pertenecen a SYS no se pueden exportar .
 SISTEMA
+======================================================================================================================================
 SYSTEM es un usuario de administración privilegiado, y normalmente posee tablas proporcionadas por Oracle que no son el diccionario. No cree sus propios objetos en SYSTEM.
+
 PÚBLICO
+=====================================================================================================================================
 El script sql.bsq, que se ejecuta cuando se crea una base de datos , crea la función pública:
 crear rol público
 / /
 Sin embargo, este rol no es visible en dba_roles porque está oculto en esta vista ( where ... name not in ('PUBLIC', '_NEXT_USER').
 Cualquier privilegio otorgado al público automáticamente se convierte en un privilegio para otros usuarios también.
+
 INTERNO
+======================================================================================================================================
 INTERNAL es un usuario especial obsoleto (a partir de 8i) al que se le permite acceder a la base de datos incluso cuando la base de datos está en estado NOMOUNT o MOUNT. Este usuario generalmente se usa para el mantenimiento físico de la base de datos. El usuario interno no se mantiene en el datadictionary sino en el archivo de contraseña de Oracle . El mecanismo interno ha sido reemplazado por el privilegio SYSDBA y SYSOPER en Oracle 8 y más allá.
 
-PÚBLICO
+
+=====================================================================================================================================
 Listas de control de aceso
-============================================ ================================================== ====
+===================================================================================================================================
 DBA_NETWORK_ACLS: Muestra la lista de control de acceso a las asignaciones de los hosts de la red. El privilegio SELECT en esta vista se otorga únicamente a la función SELECT_CATALOG_ROLE.
 DBA_NETWORK_ACL_PRIVILEGES: muestra los privilegios de red definidos en todas las listas de control de acceso que están asignadas actualmente a los hosts de la red. El privilegio SELECT en esta vista se otorga únicamente a la función SELECT_CATALOG_ROLE.
 USER_NETWORK_ACL_PRIVILEGES : muestra el estado de los privilegios de red para que el usuario actual acceda a los hosts de la red. El privilegio SELECT en la vista se otorga a PUBLIC.
-================================================== ================================================
-Búsqueda de información sobre los privilegios y roles del usuario
-=========================================== ================================================== =====
+
+PRIVILEGIOS Y ROLES DE USUARIOS 
+====================================================================================================================================
 ALL_COL_PRIVS: describe todas las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el propietario, otorgante o concesionario del objeto
 ALL_COL_PRIVS_MADE : enumera las concesiones de objetos de columna para las cuales el usuario actual es propietario o otorgante de objetos.
 ALL_COL_PRIVS_RECD : describe las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el concesionario
