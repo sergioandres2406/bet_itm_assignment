@@ -33,20 +33,36 @@ INTERNO
 INTERNAL es un usuario especial obsoleto (a partir de 8i) al que se le permite acceder a la base de datos incluso cuando la base de datos está en estado NOMOUNT o MOUNT. Este usuario generalmente se usa para el mantenimiento físico de la base de datos. El usuario interno no se mantiene en el datadictionary sino en el archivo de contraseña de Oracle . El mecanismo interno ha sido reemplazado por el privilegio SYSDBA y SYSOPER en Oracle 8 y más allá.
 
 PÚBLICO
-
-Especifique PUBLICpara crear un sinónimo público. Los sinónimos públicos son accesibles para todos los usuarios. Sin embargo, cada usuario debe tener los privilegios apropiados en el objeto subyacente para poder usar el sinónimo.
-
-Al resolver referencias a un objeto, Oracle Database utiliza un sinónimo público solo si el objeto no está precedido por un esquema y no está seguido por un enlace de base de datos
-
-Si omite esta cláusula, entonces el sinónimo es privado. Un nombre de sinónimo privado debe ser único en su esquema. Un sinónimo privado es accesible para usuarios que no sean el propietario solo si esos usuarios tienen los privilegios apropiados en el objeto de base de datos subyacente y especifican el esquema junto con el nombre del sinónimo.
-
-Notas sobre los sinónimos públicos 
-Las siguientes notas se aplican a los sinónimos públicos:
-
-Si crea un sinónimo público y posteriormente tiene tablas dependientes o tipos de objeto definidos por el usuario válidos dependientes, entonces no puede crear otro objeto de base de datos con el mismo nombre que el sinónimo en el mismo esquema que los objetos dependientes.
-
-Tenga cuidado de no crear un sinónimo público con el mismo nombre que un esquema existente. Si lo hace, todas las unidades PL / SQL que usen ese nombre serán invalidadas.
-
-esquema
-
-Especifique el esquema para contener el sinónimo. Si omite schema, Oracle Database crea el sinónimo en su propio esquema. No puede especificar un esquema para el sinónimo si lo ha especificado PUBLIC.
+Listas de control de aceso
+============================================ ================================================== ====
+DBA_NETWORK_ACLS: Muestra la lista de control de acceso a las asignaciones de los hosts de la red. El privilegio SELECT en esta vista se otorga únicamente a la función SELECT_CATALOG_ROLE.
+DBA_NETWORK_ACL_PRIVILEGES: muestra los privilegios de red definidos en todas las listas de control de acceso que están asignadas actualmente a los hosts de la red. El privilegio SELECT en esta vista se otorga únicamente a la función SELECT_CATALOG_ROLE.
+USER_NETWORK_ACL_PRIVILEGES : muestra el estado de los privilegios de red para que el usuario actual acceda a los hosts de la red. El privilegio SELECT en la vista se otorga a PUBLIC.
+================================================== ================================================
+Búsqueda de información sobre los privilegios y roles del usuario
+=========================================== ================================================== =====
+ALL_COL_PRIVS: describe todas las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el propietario, otorgante o concesionario del objeto
+ALL_COL_PRIVS_MADE : enumera las concesiones de objetos de columna para las cuales el usuario actual es propietario o otorgante de objetos.
+ALL_COL_PRIVS_RECD : describe las concesiones de objetos de columna para las cuales el usuario actual o PUBLIC es el concesionario
+ALL_TAB_PRIVS : enumera las concesiones en objetos donde el usuario o PUBLIC es el concesionario
+ALL_TAB_PRIVS_MADE : enumera todas las concesiones de objetos realizadas por el usuario actual o realizadas en los objetos propiedad de El usuario actual.
+ALL_TAB_PRIVS_RECD : enumera las concesiones de objetos para las cuales el usuario o PUBLIC es el concesionario
+DBA_COL_PRIVS : describe todas las concesiones de objetos de columna en la base de datos
+DBA_TAB_PRIVS : enumera todas las concesiones de todos los objetos en la base de datos
+DBA_ROLES : esta vista enumera todos los roles que existen en la base de datos, incluido el seguro Roles de aplicación. Tenga en cuenta que no incluye la función PUBLIC.
+DBA_ROLE_PRIVS : Muestra los papeles otorgados a los usuarios y roles
+DBA_SYS_PRIVS : privilegios del sistema Listas otorgados a los usuarios y roles
+SESSION_ROLES : enumera todas las funciones que están habilitadas para el usuario actual. Tenga en cuenta que no incluye la función PUBLIC.
+ROLE_ROLE_PRIVS: Esta vista describe los roles otorgados a otros roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+ROLE_SYS_PRIVS : esta vista contiene información sobre los privilegios del sistema otorgados a los roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+ROLE_TAB_PRIVS : esta vista contiene información sobre los privilegios de objeto otorgados a los roles. La información se proporciona solo sobre los roles a los que el usuario tiene acceso.
+USER_COL_PRIVS : describe las concesiones de objetos de columna para las cuales el usuario actual es el propietario del objeto, el otorgante o el concesionario
+USER_COL_PRIVS_MADE : describe las concesiones de objetos de columna para las cuales el usuario actual es el otorgante
+USER_COL_PRIVS_RECD: Describe las concesiones de objetos de columna para las cuales el usuario actual es el concesionario
+USER_ROLE_PRIVS : enumera los roles otorgados al usuario actual
+USER_TAB_PRIVS: enumera las concesiones en todos los objetos donde el usuario actual es el concesionario
+USER_SYS_PRIVS : enumera los privilegios del sistema otorgados al usuario actual
+USER_TAB_PRIVS_MADE: enumera las concesiones en todos los objetos propiedad del usuario actual
+USER_TAB_PRIVS_RECD: listas de objetos subvenciones para el cual el usuario actual es el concesionario
+session_privs: Lista los privilegios que actualmente están habilitados para los usuarios
+SESSION_ROLES: se enumeran las funciones que actualmente están habilitados para el usuario
