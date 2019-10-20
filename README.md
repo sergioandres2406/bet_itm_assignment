@@ -38,7 +38,6 @@ INTERNO
 INTERNAL es un usuario especial obsoleto (a partir de 8i) al que se le permite acceder a la base de datos incluso cuando la base de datos está en estado NOMOUNT o MOUNT. Este usuario generalmente se usa para el mantenimiento físico de la base de datos. El usuario interno no se mantiene en el datadictionary sino en el archivo de contraseña de Oracle . El mecanismo interno ha sido reemplazado por el privilegio SYSDBA y SYSOPER en Oracle 8 y más allá.
 
 
-=====================================================================================================================================
 Listas de control de aceso
 ===================================================================================================================================
 DBA_NETWORK_ACLS: Muestra la lista de control de acceso a las asignaciones de los hosts de la red. El privilegio SELECT en esta vista se otorga únicamente a la función SELECT_CATALOG_ROLE.
