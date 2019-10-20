@@ -20,7 +20,11 @@ SYS también es especial porque no es posible crear un activador en el esquema s
 SYS
 SYS es el propietario de la base de datos y el propietario del diccionario de datos.
 Nunca cree objetos en el esquema SYS.
-Los objetos que pertenecen a SYS no se pueden exportar .
+Los objetos que pertenecen a SYS no se pueden exportar.
+
+
+
+
 SISTEMA
 ======================================================================================================================================
 SYSTEM es un usuario de administración privilegiado, y normalmente posee tablas proporcionadas por Oracle que no son el diccionario. No cree sus propios objetos en SYSTEM.
