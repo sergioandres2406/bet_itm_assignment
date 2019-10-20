@@ -41,6 +41,7 @@ GRANT CREATE SESSION TO web_application;
 ALTER USER dba_admin 
 PROFILE dba_admin;
 GRANT CREATE SESSION TO dba_admin;
+alter user dba_admin  DEFAULT TABLESPACE  BET_ITM;
 
 ALTER USER analyst 
 PROFILE analyst;
