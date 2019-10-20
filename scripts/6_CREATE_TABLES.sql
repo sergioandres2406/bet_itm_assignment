@@ -423,6 +423,7 @@ registro_activo VARCHAR2(1) NOT NULL
 CREATE  TABLE ciudades(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_departamento NUMBER(22,0) not null,
+nombre varchar(255) not null,
 codigo_zip VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 );
@@ -529,3 +530,109 @@ registro_activo VARCHAR2(1) NOT NULL
  add constraint CK_RECEPCIO_INFO_limites_legales
  CHECK (autorizacion_recepcion_info IN ('Y','N'));
   
+  
+  
+  
+  /*******CREAMOS LOS FK */
+    
+  ALTER TABLE cronograma_partidos ADD CONSTRAINT FK_EQUIPO1 FOREIGN KEY (id_equipo1)
+	  REFERENCES equipos (id) ENABLE;
+      
+      
+  ALTER TABLE cronograma_partidos ADD CONSTRAINT FK_EQUIPO2 FOREIGN KEY (id_equipo2)
+	  REFERENCES equipos (id) ENABLE;
+      
+      
+  ALTER TABLE tipos_apuestas ADD CONSTRAINT FK_CRONOGRAMA FOREIGN KEY (id_cronograma)
+	  REFERENCES cronograma_partidos (id) ENABLE;
+      
+      
+  ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_APUESTA FOREIGN KEY (id_apuesta)
+	  REFERENCES apuestas (id) ENABLE;
+      
+       ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_ESTADO_APUESTA FOREIGN KEY (id_estado_apuesta)
+	  REFERENCES estado_apuestas (id) ENABLE;
+      
+      
+       ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_TIPO_APUESTA FOREIGN KEY (id_tipo_apuesta)
+	  REFERENCES tipos_apuestas (id) ENABLE;
+
+
+
+       ALTER TABLE comprobantes_documentos ADD CONSTRAINT FK_USUARIO FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      
+      
+       ALTER TABLE retiros ADD CONSTRAINT FK_BANCO FOREIGN KEY (id_banco)
+	  REFERENCES bancos (id) ENABLE;
+      
+      
+       ALTER TABLE retiros ADD CONSTRAINT FK_CUENTA_retiros FOREIGN KEY (id_cuenta)
+	  REFERENCES cuentas (id) ENABLE;
+
+
+       ALTER TABLE apuestas ADD CONSTRAINT FK_USUARIO_apuestas FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      
+      
+       ALTER TABLE depositos ADD CONSTRAINT FK_medio_pago FOREIGN KEY (id_medio_pago)
+	  REFERENCES medio_pago (id) ENABLE;
+      
+      
+       ALTER TABLE depositos ADD CONSTRAINT FK_cuenta FOREIGN KEY (id_cuenta)
+	  REFERENCES cuentas (id) ENABLE;
+      
+      
+      
+       ALTER TABLE usuarios ADD CONSTRAINT FK_identificacion FOREIGN KEY (id_identificacion)
+	  REFERENCES identificacion (id) ENABLE;
+      ALTER TABLE usuarios ADD constraint FK_identificacion_unica unique(id_identificacion);
+      
+      
+      
+      
+       ALTER TABLE usuarios ADD CONSTRAINT FK_PREPRERENCIAS FOREIGN KEY (id_preferencias)
+	  REFERENCES preferencias (id) ENABLE;
+      ALTER TABLE usuarios ADD constraint FK_preferencia_unica unique(id_preferencias);
+      
+      
+      
+      
+      
+       ALTER TABLE usuarios ADD CONSTRAINT FK_CIUDAD_RESIDENCIA FOREIGN KEY (id_ciudad_residencia)
+	  REFERENCES ciudades (id) ENABLE;
+      ALTER TABLE usuarios ADD constraint FK_ciudad_residencia_unica unique(id_ciudad_residencia);
+      
+        
+      
+      
+       ALTER TABLE usuarios ADD CONSTRAINT FK_LEGALES FOREIGN KEY (id_legales)
+	  REFERENCES legales (id) ENABLE;
+      ALTER TABLE usuarios ADD constraint FK_legales_unico unique(id_legales);
+      
+      
+      
+      
+       ALTER TABLE cuentas ADD CONSTRAINT FK_usuarios FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      ALTER TABLE cuentas ADD constraint FK_usuario_unico unique(id_usuario);
+      
+      
+      
+      
+       ALTER TABLE identificacion ADD CONSTRAINT FK_ciudad_expedicion FOREIGN KEY (id_ciudad_expedicion)
+	  REFERENCES ciudades (id) ENABLE;
+      
+      
+       ALTER TABLE ciudades ADD CONSTRAINT FK_departamentos FOREIGN KEY (id_departamento)
+	  REFERENCES departamentos (id) ENABLE;
+      
+      
+       ALTER TABLE departamentos ADD CONSTRAINT FK_paises FOREIGN KEY (id_pais)
+	  REFERENCES paises (id) ENABLE;
+      
+      
+       ALTER TABLE limites_bloqueos ADD CONSTRAINT FK_usuario_bloqueos FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      
+      
