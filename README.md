@@ -31,3 +31,22 @@ Sin embargo, este rol no es visible en dba_roles porque está oculto en esta vis
 Cualquier privilegio otorgado al público automáticamente se convierte en un privilegio para otros usuarios también.
 INTERNO
 INTERNAL es un usuario especial obsoleto (a partir de 8i) al que se le permite acceder a la base de datos incluso cuando la base de datos está en estado NOMOUNT o MOUNT. Este usuario generalmente se usa para el mantenimiento físico de la base de datos. El usuario interno no se mantiene en el datadictionary sino en el archivo de contraseña de Oracle . El mecanismo interno ha sido reemplazado por el privilegio SYSDBA y SYSOPER en Oracle 8 y más allá.
+
+PÚBLICO
+
+Especifique PUBLICpara crear un sinónimo público. Los sinónimos públicos son accesibles para todos los usuarios. Sin embargo, cada usuario debe tener los privilegios apropiados en el objeto subyacente para poder usar el sinónimo.
+
+Al resolver referencias a un objeto, Oracle Database utiliza un sinónimo público solo si el objeto no está precedido por un esquema y no está seguido por un enlace de base de datos
+
+Si omite esta cláusula, entonces el sinónimo es privado. Un nombre de sinónimo privado debe ser único en su esquema. Un sinónimo privado es accesible para usuarios que no sean el propietario solo si esos usuarios tienen los privilegios apropiados en el objeto de base de datos subyacente y especifican el esquema junto con el nombre del sinónimo.
+
+Notas sobre los sinónimos públicos 
+Las siguientes notas se aplican a los sinónimos públicos:
+
+Si crea un sinónimo público y posteriormente tiene tablas dependientes o tipos de objeto definidos por el usuario válidos dependientes, entonces no puede crear otro objeto de base de datos con el mismo nombre que el sinónimo en el mismo esquema que los objetos dependientes.
+
+Tenga cuidado de no crear un sinónimo público con el mismo nombre que un esquema existente. Si lo hace, todas las unidades PL / SQL que usen ese nombre serán invalidadas.
+
+esquema
+
+Especifique el esquema para contener el sinónimo. Si omite schema, Oracle Database crea el sinónimo en su propio esquema. No puede especificar un esquema para el sinónimo si lo ha especificado PUBLIC.
