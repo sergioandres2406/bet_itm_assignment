@@ -263,6 +263,7 @@ registro_activo VARCHAR2(1) NOT NULL
   
 CREATE  TABLE preferencias(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+id_usuario NUMBER(22,0) NOT NULL,
 idioma_correo varchar2(255) not null,
 boletin_informativo varchar2(1) not null,
 correo_apuestas_deporte varchar2(1) not null,
@@ -350,7 +351,6 @@ id_ciudad_residencia number(22,0) not null,
 celular varchar2(255) not null,
 direccion2 varchar2(255),
 zona_horaria varchar2(255),
-id_preferencias NUMBER(22,0) not NULL,
 lugar_nacimiento varchar2(255) not null,
 titulo varchar2(255) not null,
 id_legales number(22,0) not null,
@@ -591,10 +591,9 @@ registro_activo VARCHAR2(1) NOT NULL
       
       
       
-       ALTER TABLE usuarios ADD CONSTRAINT FK_PREPRERENCIAS FOREIGN KEY (id_preferencias)
-	  REFERENCES preferencias (id) ENABLE;
-      ALTER TABLE usuarios ADD constraint FK_preferencia_unica unique(id_preferencias);
-      
+       ALTER TABLE preferencias ADD CONSTRAINT FK_PREPRERENCIAS FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      ALTER TABLE preferencias ADD constraint FK_preferencia_unica unique(id_usuario);
       
       
       
