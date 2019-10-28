@@ -16,7 +16,7 @@ drop table apuestas cascade constraints ;
 drop table preferencias cascade constraints ;
 drop table depositos cascade constraints ;
 drop table usuarios cascade constraints ;
-drop table cuentas cascade constraints ;
+
 drop table medio_pago cascade constraints ;
 drop table identificacion cascade constraints ;
 drop table ciudades cascade constraints ;
@@ -468,6 +468,7 @@ registro_activo VARCHAR2(1) NOT NULL
  alter table bonos
  add constraint CK_REGISTRO_ACTIVO_BONO
  CHECK (registro_activo IN ('Y','N'));
+ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
   
  
  
