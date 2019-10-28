@@ -179,7 +179,7 @@ registro_activo VARCHAR2(1) NOT NULL
  
 CREATE TABLE retiros(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
-id_cuenta NUMBER(22,0) NOT NULL,
+id_usuario NUMBER(22,0) NOT NULL,
 fecha_solicitud TIMESTAMP NOT NULL,
 fecha_desembolso DATE,
 id_banco NUMBER(22,0) NOT NULL,
@@ -311,7 +311,7 @@ registro_activo VARCHAR2(1) NOT NULL
 CREATE  TABLE depositos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_medio_pago NUMBER(22,0) not null,
-id_cuenta NUMBER(22,0) not NULL,
+id_usuario NUMBER(22,0) not NULL,
 fecha_deposito TIMESTAMP NOT NULL,
 valor NUMBER(22,0) NOT NULL,
 estado varchar2(1) not null,
@@ -341,9 +341,7 @@ apellido1 varchar2(255) not null,
 apellido2 varchar2(255),
 id_identificacion NUMBER(22,0) not null,
 nacionalidad varchar2(255) not null,
-id_cuenta NUMBER(22,0) not NULL,
 fecha_nacimiento DATE NOT NULL,
-valor NUMBER(22,0) NOT NULL,
 direccion varchar2(255) not null,
 correo varchar2(255) not null,
 contraseña varchar2(255) not null,
@@ -354,6 +352,7 @@ zona_horaria varchar2(255),
 lugar_nacimiento varchar2(255) not null,
 titulo varchar2(255) not null,
 id_legales number(22,0) not null,
+saldo NUMBER(22,0) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 );
  
@@ -366,22 +365,7 @@ registro_activo VARCHAR2(1) NOT NULL
  CHECK (registro_activo IN ('Y','N'));
  
  
- 
- 
-  
-CREATE  TABLE cuentas(
-id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-id_usuario NUMBER(22,0) not null,
-saldo NUMBER(22,0) NOT NULL,
-registro_activo VARCHAR2(1) NOT NULL
-);
-
-
-/*CONSTRAINTS */
- alter table cuentas
- add constraint CK_REGISTRO_ACTIVO_CUENTAS
- CHECK (registro_activo IN ('Y','N'));
-  
+   
  
  
  
@@ -567,8 +551,8 @@ registro_activo VARCHAR2(1) NOT NULL
 	  REFERENCES bancos (id) ENABLE;
       
       
-       ALTER TABLE retiros ADD CONSTRAINT FK_CUENTA_retiros FOREIGN KEY (id_cuenta)
-	  REFERENCES cuentas (id) ENABLE;
+       ALTER TABLE retiros ADD CONSTRAINT FK_CUENTA_usuario_retiros FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
 
 
        ALTER TABLE apuestas ADD CONSTRAINT FK_USUARIO_apuestas FOREIGN KEY (id_usuario)
@@ -579,8 +563,8 @@ registro_activo VARCHAR2(1) NOT NULL
 	  REFERENCES medio_pago (id) ENABLE;
       
       
-       ALTER TABLE depositos ADD CONSTRAINT FK_cuenta FOREIGN KEY (id_cuenta)
-	  REFERENCES cuentas (id) ENABLE;
+       ALTER TABLE depositos ADD CONSTRAINT FK_cuenta_usuario_deposito FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
       
       
       
@@ -609,12 +593,6 @@ registro_activo VARCHAR2(1) NOT NULL
 	  REFERENCES legales (id) ENABLE;
       ALTER TABLE usuarios ADD constraint FK_legales_unico unique(id_legales);
       
-      
-      
-      
-       ALTER TABLE cuentas ADD CONSTRAINT FK_usuarios FOREIGN KEY (id_usuario)
-	  REFERENCES usuarios (id) ENABLE;
-      ALTER TABLE cuentas ADD constraint FK_usuario_unico unique(id_usuario);
       
       
       
