@@ -10,7 +10,6 @@ drop table comprobantes_documentos cascade constraints ;
 drop table detalle_apuesta cascade constraints ;
 drop table retiros cascade constraints ;
 drop table AUDITORIA cascade constraints ;
-drop table estado_apuestas cascade constraints ;
 drop table apuestas cascade constraints ;
 
 drop table preferencias cascade constraints ;
@@ -118,7 +117,7 @@ CREATE TABLE detalle_apuesta(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
 id_apuesta NUMBER(22,0),
 id_tipo_apuesta NUMBER(22,0),
-id_estado_apuesta NUMBER(22,0),
+estado VARCHAR2(255) NOT NULL,
 opcion_equipo1 VARCHAR2(1) NOT NULL,
 opcion_equipo2 VARCHAR2(1) NOT NULL,
 opcion_empate VARCHAR2(1) NOT NULL,
@@ -172,6 +171,11 @@ registro_activo VARCHAR2(1) NOT NULL
  alter table detalle_apuesta
  add constraint CK_OPCIONES_ESTADO_DETALLE_APUESTA7
  CHECK (opcion_menos IN ('Y', 'N'));
+  
+ alter table detalle_apuesta
+ add constraint CK_ESTADO_APUESTAS
+ CHECK (estado IN ('Abierta','Ganada','Perdida','vendida','Cancelada','Reembolsada','Invalida','Rechazado','Pedido','Parte aprobada'));
+ 
  
  
  
@@ -220,25 +224,8 @@ tablespace BET_AUDITING;
  
  
   
-  
-CREATE  TABLE estado_apuestas(
-id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-estado varchar2(255) not null,
-registro_activo VARCHAR2(1) NOT NULL
-);
-
-/*CONSTRAINTS estado_apuestas */
- alter table estado_apuestas
- add constraint CK_REGISTRO_ACTIVO_ESTADO_APUESTAS
- CHECK (registro_activo IN ('Y','N'));
- 
  
 
- alter table estado_apuestas
- add constraint CK_ESTADO_APUESTAS
- CHECK (estado IN ('Abierta','Ganada','Perdida','vendida','Cancelada','Reembolsada','Invalida','Rechazado','Pedido','Parte aprobada'));
- 
- 
  
  
  
@@ -534,10 +521,7 @@ registro_activo VARCHAR2(1) NOT NULL
       
   ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_APUESTA FOREIGN KEY (id_apuesta)
 	  REFERENCES apuestas (id) ENABLE;
-      
-       ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_ESTADO_APUESTA FOREIGN KEY (id_estado_apuesta)
-	  REFERENCES estado_apuestas (id) ENABLE;
-      
+            
       
        ALTER TABLE detalle_apuesta ADD CONSTRAINT FK_TIPO_APUESTA FOREIGN KEY (id_tipo_apuesta)
 	  REFERENCES tipos_apuestas (id) ENABLE;
