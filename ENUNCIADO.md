@@ -38,9 +38,9 @@
     <meta property="og:image" content="https://avatars3.githubusercontent.com/u/3156245?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="amartinezg/bet_itm_assignment" /><meta property="og:url" content="https://github.com/amartinezg/bet_itm_assignment" /><meta property="og:description" content="Contribute to amartinezg/bet_itm_assignment development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDQ4NDgwODUzOjEwMjE3YTYxNDBmODUxOGI4ZjE1ZWU4NTdlYzJlNWY1ODUxMmRlYzVjNzg5ZWQxMzJhMTc2MDExNzk4ZTg2Nzk=--5ba7d4a6058205ecaf057a5f78e821a5763c53e4">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDQ4NDgwODUzOmE4YzAwMTI2MWExZjI3YWJjNjA5M2JmNzM4OTA2MjcyOGNkOTI1YWI1Yzc1YmYwMmJkMjhhOWMzZWQ4NWRmZTA=--c61ec22da38b6c0b9388a0c56fd589b358574aa3">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="E0E6:6ED0:28A89A0:411F20C:5DC21669" data-pjax-transient>
+  <meta name="request-id" content="DCA2:3F04:12B2DF1:1F8AA5F:5DC21865" data-pjax-transient>
 
 
   
@@ -51,7 +51,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="E0E6:6ED0:28A89A0:411F20C:5DC21669" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="5357420830823798801" /><meta name="octolytics-actor-id" content="53239282" /><meta name="octolytics-actor-login" content="sergioandres2406" /><meta name="octolytics-actor-hash" content="7f6b7707f7d2fedc7f69420d3e4d82bcc10b86ea2f91d902b484279b74dea12b" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="DCA2:3F04:12B2DF1:1F8AA5F:5DC21865" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="5357420830823798801" /><meta name="octolytics-actor-id" content="53239282" /><meta name="octolytics-actor-login" content="sergioandres2406" /><meta name="octolytics-actor-hash" content="7f6b7707f7d2fedc7f69420d3e4d82bcc10b86ea2f91d902b484279b74dea12b" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -70,7 +70,7 @@
     <meta name="user-login" content="sergioandres2406">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="NGJjY2IxZDNkNjFiMjYwNGEzNTg3ZTkyMzk1MjQ3MjAxM2VmNmViM2QxN2UwMTU3NTcwODNkODFkNzU4ZTVlN3x7InJlbW90ZV9hZGRyZXNzIjoiMTkxLjkyLjI2LjE4NiIsInJlcXVlc3RfaWQiOiJFMEU2OjZFRDA6MjhBODlBMDo0MTFGMjBDOjVEQzIxNjY5IiwidGltZXN0YW1wIjoxNTczMDAwODE4LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+    <meta name="js-proxy-site-detection-payload" content="MTg1MDc2ZThkYjg1NTg2ZjdhOTJjNzczNDFmMjQ4MzdiOTczMTI1YjQxYTgyM2RmMzg0MjA2MTdmMzE4ZmZhNHx7InJlbW90ZV9hZGRyZXNzIjoiMTkxLjkyLjI2LjE4NiIsInJlcXVlc3RfaWQiOiJEQ0EyOjNGMDQ6MTJCMkRGMToxRjhBQTVGOjVEQzIxODY1IiwidGltZXN0YW1wIjoxNTczMDAxMzMxLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="ACTIONS_V2_ON_MARKETPLACE,MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,NOTIFY_ON_BLOCK,RELATED_ISSUES,GHE_CLOUD_TRIAL">
 
@@ -160,7 +160,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=CREGQ0I+VUgTtWFzGmy0IB9biKDuKUShqm1UBRXeD9gKpLO+OCgQYuOWWxCOPBICdimn5zDnuqtu8s5AwyfHUA=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=So4/1kdCMvECJPwu+8vyDBMwLfT8+bo2WQC4DFRU32NJO4orPVR32/IHxk1vm1QuekICsyI3RDydnyJJgq0X6w=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -313,7 +313,7 @@
       <img class="avatar" height="20" width="20" alt="@sergioandres2406" src="https://avatars1.githubusercontent.com/u/53239282?s=60&amp;v=4" />
       sergioandres2406
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="FHfDwI+PJD0GG+eYPQybNwLunlQey6HYyqVp26mr/TkjxqpKY/1MbC8AUEYKfAb1ZGdCVzrbk6eNZR1p8l0s6Q==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="39kixSsam5vqcgNzo2F8/34H/20las73osEn1a+s+4ToaEtPx2jzysNptK2UEeE9GI4jbgF6/IjlAVNn9FoqVA==" />
       <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
         Sign out
@@ -406,7 +406,7 @@
   " data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
     <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
-      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:3156245,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:53239282,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;}}" data-hydro-click-hmac="cbb638a366e6dd44b9f6018ac452bdfdabff9da4473f6c50ae8623205c29b1d9">
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:3156245,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:53239282,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;}}" data-hydro-click-hmac="11f3895576b74e7ba0e0c8090733ee8ac26f4529465007e39856d4ff632a5b6b">
       <div class="d-flex">
         <div class="f6 lh-condensed user-status-header
           d-inline-block v-align-middle
@@ -433,7 +433,7 @@
       </div>
     </summary>
     <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="NUqnuFMtmCKaBMLW3sx1QLaM8hqVROcgqLJAgQOur+Sg3t0LU7g4xTsUCrKcH3qZ5K6o4LRgd6HkTGL3bShDnQ==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="fjHqrLzxUJEF6FtTI6sRhYReEc1m+1EhnEpgfhmKN0nrpZAfvGTwdqT4kzdheB5c1nxLN0ffwaDQtEIIdwzbMA==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -553,17 +553,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-11-05T20:10:18-05:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-11-05T20:18:51-05:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-11-05T20:40:18-05:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-11-05T20:48:51-05:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-11-05T23:40:18-05:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-11-05T23:48:51-05:00">
             in 4 hours
           </button>
         </li>
@@ -621,10 +621,10 @@
     class="dropdown-item btn-link"
     role="menuitem"
     data-feature-preview-trigger-url="/users/sergioandres2406/feature_previews"
-    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}"
-    data-feature-preview-close-hmac="582321f8413a856665c3591f130336ba878bdd2daede9666ea30cb7c46ef8623"
-    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}"
-    data-hydro-click-hmac="3a1c69c8917fb69636e7ca942ca8f40b120ca73389c126e17355358c8a516d1b"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}"
+    data-feature-preview-close-hmac="461a16f1e1307bf252809e7059246243cbf73192178b7380e9daed77fce76fa7"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}"
+    data-hydro-click-hmac="a19c8ae7ca1e0d6f93c671cfc46058eccd0035ae7a8b660625ecc1ca430f7084"
   >
     Feature preview
   </button>
@@ -633,7 +633,7 @@
 
     <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2jx9A1FPoN7W3TJAu/gPvNoQQkcxYMXK5/st7XIGfnntjRSJvT3Ij//GhZ6MiJJ+vJmeRBVw97WgO1lfKfCvqQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7n6WVAUqSTcuJAIQP/mN42SleQMS32cdTmFuZDJZViDZz//e6VghZgc/tc4IiRAhAiylADbPVWIJoRrWaa+H8A==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
@@ -673,10 +673,10 @@
       <p class="shelf-lead">
           Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
       </p>
-      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="74666414f8f8ec604d959f952b3ccc90dd9ad4b8735fdb794bd4ef4907d75df1" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
+      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="d3367a5e8af495dd77b3bea3447c86c492e46c4b4919b857e0461a472db4b677" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
     </div>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="rCnTqQQvEBhHLNWm8dEeLurn1a62Ygg4vNfOuO1ls8DYbxkRw5ws9X+ziq1mR0a5Q3EmWPj5S8IuEKpPoXayNQ==" />
-      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="3d8896fe22abfc8a4d507d4126308df5fd1f3bf1784fc6bbf77d28690ac39c36">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="6W5dFpz9YpKFNEi/n363Gj9NNRXG6kKLte2FTQIFRpmdKJeuW05ef72rF7QI6O+NltvG44hxAXEnKuG6ThZHbA==" />
+      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="7666551501416b3b98576c23eed862c3b9906c0eac4dc6c7be0a81a0c59b6f4b">
         <svg aria-label="Hide this notice forever" class="octicon octicon-x v-align-text-top" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
 </button></form>  </div>
 </div>
@@ -701,10 +701,10 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="N0vwzphQwMONqRuAcCGH0WK+bqtxtcobwCVZK1kfQTZ8lWw2Cgb+6+mG6OPcRktLGsmuodZYhq79mFG0b6rLJg==" />      <input type="hidden" name="repository_id" value="208381524">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="N0uVBxZQ1XzndaXXTEvXr/HVbPncy4vVLeOMFUxUWx98lQn/hAbrVINaVrTgLBs1iaKs83smx2AQXoSKeuHRDw==" />      <input type="hidden" name="repository_id" value="208381524">
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="06fdc32e8d5a70ece37cf6bd394fb5110d5fa6fb849fca79f33df21a8ab7ab84" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="af2fd4a79665e037f3452e53b3c3a8b970074d1ce377bb6169a14a83f6801d07" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
               Watch
           </span>
@@ -775,18 +775,18 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/amartinezg/bet_itm_assignment/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QIl5N2ebwTPIBOjh+Tb7BOEAWZgbwSUEz5SErsYbWZbNU85SlBKSWtr7sC/8MJPYwD+Ra1yxhFtRWaE9j61I2w==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/amartinezg/bet_itm_assignment/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ScEa1V8Qje4IgcOYm0NdymsOUFdUBusWaj+O/1DtaXHEG62wrJnehxp+m1aeRTUWSjGYpBN2Skn08qtsGVt4PA==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar amartinezg/bet_itm_assignment" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="9bfc07ff5854f11084a7cd7b759cec65e79fdd226683940c33af9dede087e519" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar amartinezg/bet_itm_assignment" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="a8a71c696a8a14c5b707e24073ab93bfb4800cb7765cfaa3750814a1ba4f004b" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Unstar
 </button>        <a class="social-count js-social-count" href="/amartinezg/bet_itm_assignment/stargazers"
            aria-label="1 user starred this repository">
            1
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/amartinezg/bet_itm_assignment/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="nCkM4x8zbkXKPlEKX/IrchxpRSAgwwIWdoWC6Csuo6FPCylKz6DgI1NxFnS5MnQZkMkmD1zjz3o9MC/LxQRbVg==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/amartinezg/bet_itm_assignment/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QEfI/dR9Hyg6RvcHUsm37Yyhpbj2nk2B0HguTI8077STZe1UBO6RTqMJsHm0CeiGAAHGl4q+gO2bzYNvYR4XQw==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star amartinezg/bet_itm_assignment" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="028c563b67f4b39dd640e3b66d5fe9896d4a5314d6cc75cd265293f5d4689c68" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star amartinezg/bet_itm_assignment" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="36f5cba5749ae3b19f12ff079d7fd14e1c013d7917d25a2f325062e03c544702" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Star
 </button>        <a class="social-count js-social-count" href="/amartinezg/bet_itm_assignment/stargazers"
            aria-label="1 user starred this repository">
@@ -797,8 +797,8 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/amartinezg/bet_itm_assignment/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="F6Renii1NRB/2W6KYH0hIOEmZD7XTpJQ7PHxyBD0PyINmxOsPsc5VktZo9p0ymTeb4aqmirr4WSWOuhpG7YPxg==" />
-            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;E0E6:6ED0:28A89A0:411F20C:5DC21669&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="7ecc77b4e0e6c46cc912901872da90bafdc15face52b6c87a88678797a14ca16" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of amartinezg/bet_itm_assignment to your account" aria-label="Fork your own copy of amartinezg/bet_itm_assignment to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/amartinezg/bet_itm_assignment/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7czgT3FjzfSnZJ4FGJtV0s07+UIcLSyE/Q5WjCX7gvj38619ZxHBspPkU1UMLBAsQ5s35uGIX7CHxU8tLrmyHA==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:208381524,&quot;client_id&quot;:&quot;1247371740.1569183761&quot;,&quot;originating_request_id&quot;:&quot;DCA2:3F04:12B2DF1:1F8AA5F:5DC21865&quot;,&quot;originating_url&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/amartinezg/bet_itm_assignment&quot;,&quot;user_id&quot;:53239282}}" data-hydro-click-hmac="4ff26fbe598222c9960ca65f94112c2fd75d3a603cb1c0dea442d54b235c0d03" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of amartinezg/bet_itm_assignment to your account" aria-label="Fork your own copy of amartinezg/bet_itm_assignment to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
 </button></form>
     <a href="/amartinezg/bet_itm_assignment/network/members" class="social-count"
@@ -1066,13 +1066,13 @@
                 <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
             </a>
 
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/amartinezg/bet_itm_assignment/edit/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vZ2dUCUXDF+zVAd/EB92A23/Vdz6plZph7pUYcHAM+M7gWxrnFEPNZDWYjPD+YhLK9+ZR/5yOTvfjf+9aYJcnQ==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/amartinezg/bet_itm_assignment/edit/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="z1bdnwX7wzSFRz8HVAH2xldyHp4MAJj5pLq5usJZ7UJJSiykvL3AXqbFWkuH5wiOEVLSBQjU96v8jRJmahuCPA==" />
               <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
                 aria-label="Edit the file in your fork of this project" data-hotkey="e" data-disable-with>
                 <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 011.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
               </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/amartinezg/bet_itm_assignment/delete/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="yld5JPOFLAJkf4jedgdD/5zV4P6rXt5XYcs8069QhF/D1m8qW2eMuQR9rTJ/RqN9qgLMNhfGX0UQ0S/tCKUkXw==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/amartinezg/bet_itm_assignment/delete/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="PlI/OUZnXun1jplVK1Cev3Apin69TK9enEdIhOJtBWo30yk37oX+UpWMvLkiEX49Rv6mtgHULkztXVu6RZilag==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete the file in your fork of this project" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1481,7 +1481,7 @@ En la siguiente imagen se encuentran las preferencias de usuario y algunos campo
 <div class="footer container-lg width-full p-responsive" role="contentinfo">
   <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.52698s from unicorn-596bb4b675-ksms4">GitHub</span>, Inc.</li>
+      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.71829s from unicorn-87647d4c8-w2khd">GitHub</span>, Inc.</li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
