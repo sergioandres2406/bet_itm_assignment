@@ -44,6 +44,14 @@ fecha DATE NOT NULL,
 hora NUMBER(22,0) NOT NULL,
 id_equipo1 NUMBER(22,0) NOT NULL,
 id_equipo2 NUMBER(22,0) NOT NULL,
+ganador NUMBER(22,0),
+goles_equipo1 NUMBER(22,0),
+goles_equipo2 NUMBER(22,0),
+ganador_tiempo1 NUMBER(22,0),
+ganador_tiempo2 NUMBER(22,0),
+goles_tiempo1 NUMBER(22,0),
+goles_tiempo2 NUMBER(22,0),
+estado VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 );
 /*CONSTRAINTS */
@@ -64,6 +72,7 @@ porcentaje_si NUMBER(22,2),
 porcentaje_no NUMBER(22,2),
 porcentaje_mas NUMBER(22,2),
 porcentaje_menos NUMBER(22,2),
+estado VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
   );
 
@@ -126,6 +135,7 @@ opcion_no VARCHAR2(1) NOT NULL,
 opcion_mas VARCHAR2(1) NOT NULL,
 opcion_menos VARCHAR2(1) NOT NULL,
 valor_apostado NUMBER(22,0),
+valor_ganado NUMBER(22,0),
 porcentaje_equipo1_apostado NUMBER(22,0),
 porcentaje_equipo2_apostado  NUMBER(22,0),
 porcentaje_empate_apostado  NUMBER(22,0),
@@ -235,6 +245,7 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 fecha_apuesta date not null,
 id_usuario NUMBER(22,0) NOT NULL,
 total NUMBER(22,0) NOT NULL,
+total_ganado NUMBER(22,0),
 registro_activo VARCHAR2(1) NOT NULL
 );
 
