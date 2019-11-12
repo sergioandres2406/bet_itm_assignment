@@ -1,7 +1,5 @@
 
-alter session set "_ORACLE_SCRIPT"=true;
-
- 
+alter session set "_ORACLE_SCRIPT"=true; 
  
 drop table equipos cascade constraints ;
 drop table cronograma_partidos cascade constraints ;
