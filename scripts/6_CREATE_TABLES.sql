@@ -1,5 +1,5 @@
 
-alter session set "_ORACLE_SCRIPT"=true; 
+---alter session set "_ORACLE_SCRIPT"=true; 
  
 drop table equipos cascade constraints ;
 drop table cronograma_partidos cascade constraints ;
@@ -28,7 +28,7 @@ CREATE  TABLE equipos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nombre varchar2(255) not null,
 registro_activo VARCHAR2(255) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 /*CONSTRAINTS equipos */
  alter table equipos
@@ -52,7 +52,7 @@ goles_tiempo1 NUMBER(22,0),
 goles_tiempo2 NUMBER(22,0),
 estado VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 /*CONSTRAINTS */
  alter table cronograma_partidos
  add constraint CK_REGISTRO_ACTIVO_CRONOGRAMA
@@ -73,7 +73,7 @@ porcentaje_mas NUMBER(22,2),
 porcentaje_menos NUMBER(22,2),
 estado VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-  );
+) TABLESPACE BET_ITM;
 
 /*CONSTRAINTS */
  alter table tipos_apuestas
@@ -86,7 +86,7 @@ CREATE TABLE bancos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
 nombre varchar2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-  );
+) TABLESPACE BET_ITM;
  
  
 /*CONSTRAINTS */
@@ -105,7 +105,7 @@ extension varchar2(255) NOT NULL,
 url varchar2(255) NOT NULL,
 estado varchar2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-  );
+) TABLESPACE BET_ITM;
   
  
 /*CONSTRAINTS */
@@ -143,7 +143,7 @@ porcentaje_no_apostado  NUMBER(22,2),
 porcentaje_mas_apostado  NUMBER(22,2),
 porcentaje_menos_apostado  NUMBER(22,2),
 registro_activo VARCHAR2(1) NOT NULL
-  );
+) TABLESPACE BET_ITM;
   
  
 /*CONSTRAINTS */
@@ -193,13 +193,13 @@ registro_activo VARCHAR2(1) NOT NULL
 CREATE TABLE retiros(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
 id_usuario NUMBER(22,0) NOT NULL,
-fecha_solicitud TIMESTAMP NOT NULL,
+fecha_solicitud TIMESTAMP DEFAULT SYSDATE NOT NULL,
 fecha_desembolso DATE,
 id_banco NUMBER(22,0) NOT NULL,
 estado varchar2(255) NOT NULL,
 validacion_documentos varchar2(1) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-  );
+) TABLESPACE BET_ITM;
   
 /*CONSTRAINTS */
  alter table retiros
@@ -215,7 +215,7 @@ alter table retiros
  
  create table AUDITORIA
 (   id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
-    fecha_hora DATE NOT NULL,
+    fecha_hora TIMESTAMP DEFAULT SYSDATE NOT NULL,
     tabla varchar2(255) not null,
     record_id  NUMBER(22,0) NOT NULL,
     action varchar2(255) not null,
@@ -241,12 +241,12 @@ tablespace BET_AUDITING;
   
 CREATE  TABLE apuestas(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-fecha_apuesta date not null,
+fecha_apuesta TIMESTAMP DEFAULT SYSDATE NOT NULL,
 id_usuario NUMBER(22,0) NOT NULL,
 total NUMBER(22,0) NOT NULL,
 total_ganado NUMBER(22,0),
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
  alter table apuestas
@@ -268,7 +268,7 @@ envio_sms varchar2(1) not null,
 notificaciones_navegador varchar2(1) not null,
 aviso_boleto_apuesta varchar2(1) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
  alter table preferencias
@@ -309,12 +309,11 @@ CREATE  TABLE depositos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_medio_pago NUMBER(22,0) not null,
 id_usuario NUMBER(22,0) not NULL,
-fecha_deposito TIMESTAMP NOT NULL,
+fecha_deposito TIMESTAMP DEFAULT SYSDATE NOT NULL,
 valor NUMBER(22,0) NOT NULL,
 estado varchar2(1) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
-
+) TABLESPACE BET_ITM;
 
 /*CONSTRAINTS */
  alter table depositos
@@ -351,8 +350,7 @@ titulo varchar2(255) not null,
 id_legales number(22,0) not null,
 saldo NUMBER(22,0) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-);
- 
+) TABLESPACE BET_ITM;
 
 
 
@@ -372,7 +370,7 @@ nombre VARCHAR2(255) NOT NULL,
 valor_maximo NUMBER(22,0) not null,
 valor_minmo NUMBER(22,0) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -389,7 +387,7 @@ tipo_doc VARCHAR2(255) NOT NULL,
 fecha_expedicion date not null,
 id_ciudad_expedicion NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -407,7 +405,7 @@ id_departamento NUMBER(22,0) not null,
 nombre varchar(255) not null,
 codigo_zip VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -424,7 +422,7 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nombre VARCHAR2(255) NOT NULL,
 id_pais NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -441,7 +439,7 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nombre VARCHAR2(255) NOT NULL,
 prefijo_pais VARCHAR2(255) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -458,7 +456,7 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 codigo VARCHAR2(255) NOT NULL,
 valor NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -479,7 +477,7 @@ semanal NUMBER(22,0) not null,
 mensual NUMBER(22,0) not null,
 tiempo_cerrar_sesion NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
@@ -495,7 +493,7 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 terminos_condiciones VARCHAR2(1) NOT NULL,
 autorizacion_recepcion_info VARCHAR2(1) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
-);
+) TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS */
