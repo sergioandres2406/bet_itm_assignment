@@ -469,12 +469,15 @@ ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
  
  
  
-CREATE  TABLE limites_bloqueos(
+create  TABLE limites_bloqueos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_usuario NUMBER(22,0) not null,
-diario NUMBER(22,0) not null,
-semanal NUMBER(22,0) not null,
-mensual NUMBER(22,0) not null,
+montodiario NUMBER(22,0),
+montosemanal NUMBER(22,0),
+montomensual NUMBER(22,0),
+perdidadiario NUMBER(22,0),
+perdidasemanal NUMBER(22,0),
+perdidamensual NUMBER(22,0),
 tiempo_cerrar_sesion NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
@@ -485,7 +488,9 @@ registro_activo VARCHAR2(1) NOT NULL
  add constraint CK_REGISTRO_ACTIVO_limites_bloqueos
  CHECK (registro_activo IN ('Y','N'));
   
-  
+  alter table limites_bloqueos
+ add constraint CK_MONTOdiario_limites_bloqueos
+ CHECK (montodiario > 0);
   
  
 CREATE  TABLE legales(
