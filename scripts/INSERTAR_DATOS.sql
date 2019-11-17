@@ -141,7 +141,6 @@ insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('VICHADA',1
 
 /* CIUDADES DE ANTIOQUIA */
 
-INSERT INTO CIUDADES (id_departamento, nombre, codigo_zip,registro_activo) values (1,);
 
 INSERT INTO ciudades (id_departamento,nombre,codigo,registro_activo) VALUES (1,'Medellin','51213','Y');
 INSERT INTO ciudades (id_departamento,nombre,codigo,registro_activo) VALUES (2,'Barranquilla','70119','Y');
@@ -172,20 +171,12 @@ INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (26,
 INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (27,'Sanjose','50414','Y');
 INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (28,'Mitu','20818','Y');
 INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (29,'Puerto Carreño','60915','Y');
-INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (30,'Puerto Carreño','90815','Y');
-INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (31,'Puerto Carreño','70315','Y');
-INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (32,'Puerto Carreño','40915','Y');
+INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (30,'Puerto a','90815','Y');
+INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (31,'Puerto b','70315','Y');
+INSERT INTO ciudades (id_departamento,nombre,codigo,registro_Activo) VALUES (32,'Puerto c','40915','Y');
 
 
-medios_pago
-
-
-
-
-
-
-
-
+--medios_pago
 
 
 INSERT INTO medio_pago (nombre,valor_maximo,valor_mimimo,registro_activo) VALUES ('VISA',352600,323233,'Y');
@@ -197,17 +188,7 @@ INSERT INTO medio_pago (nombre,valor_maximo,valor_mimimo,registro_activo) VALUES
 INSERT INTO medio_pago (nombre,valor_maximo,valor_mimimo,registro_activo) VALUES ('BONUSCODE',718634,907315,'Y');
 INSERT INTO medio_pago (nombre,valor_maximo,valor_mimimo,registro_activo) VALUES ('BALOTO',$447145,$656807,'Y');
 
-identificacion
-
-
-
-
-
-
-
-
-
-
+--identificacion
 
 
 INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciuda_exp,registro_activo) VALUES ('43948695','Cc','11/02/2006',4,'Y');
@@ -219,7 +200,7 @@ INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciuda_exp,registro_act
 
 
 
-legales
+--legales
 
 INSERT INTO legales(terminos_condiciones,autorizacion_recepcion_info,registro_activo) VALUES ('Y','Y','Y');
 INSERT INTO legales (terminos_condiciones,autorizacion_recepcion_info,registro_activo) VALUES ('Y','N','Y');
