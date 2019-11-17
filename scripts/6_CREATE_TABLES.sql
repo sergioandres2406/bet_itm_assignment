@@ -563,6 +563,9 @@ registro_activo VARCHAR2(1) NOT NULL
        ALTER TABLE comprobantes_documentos ADD CONSTRAINT FK_USUARIO FOREIGN KEY (id_usuario)
 	  REFERENCES usuarios (id) ENABLE;
       
+      ALTER TABLE sesiones ADD CONSTRAINT FK_USUARIO_sesiones FOREIGN KEY (id_usuario)
+	  REFERENCES usuarios (id) ENABLE;
+      
       
        ALTER TABLE retiros ADD CONSTRAINT FK_BANCO FOREIGN KEY (id_banco)
 	  REFERENCES bancos (id) ENABLE;
