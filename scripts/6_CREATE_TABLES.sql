@@ -367,7 +367,7 @@ CREATE  TABLE medio_pago(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nombre VARCHAR2(255) NOT NULL,
 valor_maximo NUMBER(22,0) not null,
-valor_minmo NUMBER(22,0) NOT NULL,
+valor_minimo NUMBER(22,0) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
 
@@ -584,7 +584,7 @@ registro_activo VARCHAR2(1) NOT NULL
       
        ALTER TABLE usuarios ADD CONSTRAINT FK_LEGALES FOREIGN KEY (id_legales)
 	  REFERENCES legales (id) ENABLE;
-      ALTER TABLE usuarios ADD constraint FK_legales_unico unique(id_legales);
+      
       
       
       

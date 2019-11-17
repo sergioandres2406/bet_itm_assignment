@@ -104,7 +104,8 @@ insert into BONOS (codigo, valor, registro_activo) values ('XrJq2', 30000, 'Y');
 
 /* INSERTAMOS EL PAIS COLOMBIA */
 insert into PAISES (nombre, prefijo_pais, registro_activo) values ('Colombia', 'CO', 'Y');
-SELECT * FROM PAISES;
+
+
 /* INSERTAMOS LOS DEPARTAMENTOS DE COLOMBIA */
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('ANTIOQUIA',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('ATLANTICO',1, 'Y');
@@ -181,11 +182,11 @@ INSERT INTO medio_pago (nombre,valor_maximo,valor_minimo,registro_activo) VALUES
 --identificacion
 
 
-INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciudad_exp,registro_activo) VALUES ('43948695','Cc','11/02/2006',4,'Y');		
-INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciudad_exp,registro_activo) VALUES ('41632860','Cc','11/02/2006',22,'Y');		
-INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciudad_exp,registro_activo) VALUES ('38875079','Ce','11/02/2006',18,'Y');		
-INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciudad_exp,registro_activo) VALUES ('49057670','Cc','11/02/2006',29,'Y');		
-INSERT INTO identificacion (numeroid,tipo_doc,fech_exp,Id_ciudad_exp,registro_activo) VALUES ('9860895','Pasaporte','11/02/2006',1,'Y');		
+INSERT INTO identificacion (numeroid,tipo_doc,fecha_expedicion,id_ciudad_expedicion,registro_activo) VALUES ('43948695','CC','11/02/2006',4,'Y');		
+INSERT INTO identificacion (numeroid,tipo_doc,fecha_expedicion,id_ciudad_expedicion,registro_activo) VALUES ('41632860','CC','11/02/2006',22,'Y');		
+INSERT INTO identificacion (numeroid,tipo_doc,fecha_expedicion,id_ciudad_expedicion,registro_activo) VALUES ('38875079','CE','11/02/2006',18,'Y');		
+INSERT INTO identificacion (numeroid,tipo_doc,fecha_expedicion,id_ciudad_expedicion,registro_activo) VALUES ('49057670','CC','11/02/2006',2,'Y');		
+INSERT INTO identificacion (numeroid,tipo_doc,fecha_expedicion,id_ciudad_expedicion,registro_activo) VALUES ('9860895','Pasaporte','11/02/2006',2,'Y');		
 		
 
 
@@ -197,13 +198,11 @@ INSERT INTO legales(terminos_condiciones,autorizacion_recepcion_info,registro_ac
 INSERT INTO legales (terminos_condiciones,autorizacion_recepcion_info,registro_activo) VALUES ('Y','N','Y');
 
 --usuarios 
-
-INSERT INTO usuarios (nombre1,nombre2,apellido1,apellido2,id_identificacion,nacionalidad,fecha_nacimiento,direccion,correo,contraseÃ±a,id_ciudad_residencia,celular,direccion2,Zona_horaria,lugar_nacimiento,titulo,id_legales,saldo,registro_activo) VALUES ('Blaze, Palmer, Elton, Mira','Summer, Savannah, Cynthia, Kyle','Rojas','Humphrey',4,'Malbaie','11/08/2000','5409 Urna Avenue','amet.lorem.semper@vitaesemper.net','QOY16III7DO',1,'1664052011299','Ap #676-4696 Odio. Ave','0.2673018296','barranquilla','Sra.',2,'551 920','Y');		
-INSERT INTO usuarios (nombre1,nombre2,apellido1,apellido2,id_identificacion,nacionalidad,fecha_nacimiento,direccion,correo,contraseÃ±a,id_ciudad_residencia,celular,direccion2,Zona_horaria,lugar_nacimiento,titulo,id_legales,saldo,registro_activo) VALUES ('Hayden, Dawn, Avye, Ahmed','Carter, Hannah, Linus, Upton','Chang','Bond',5,'Westlock','11/08/2000','695-9015 Iaculis, Ave','Quisque.libero@netusetmalesuada.net','AJM81WBI2JY',5,'1651012471099','Ap #957-7548 Et, St.','0.007944652','tolima','Sr',2,'353 810','Y');		
-INSERT INTO usuarios (nombre1,nombre2,apellido1,apellido2,id_identificacion,nacionalidad,fecha_nacimiento,direccion,correo,contraseÃ±a,id_ciudad_residencia,celular,direccion2,Zona_horaria,lugar_nacimiento,titulo,id_legales,saldo,registro_activo) VALUES ('Kato, Harriet, Magee, Gemma','Kirk, Hammett, Kareem, Lucian','Velasquez','Hardy',5,'Heusweiler','11/08/2000','P.O. Box 944, 4660 Elementum Rd.','venenatis.vel.faucibus@mus.edu','NJS80QGO4ON',10,'1668072963099','2859 Lorem. St.','-0.3182219966','cali','Sra.',2,'484 139','Y');		
-INSERT INTO usuarios (nombre1,nombre2,apellido1,apellido2,id_identificacion,nacionalidad,fecha_nacimiento,direccion,correo,contraseÃ±a,id_ciudad_residencia,celular,direccion2,Zona_horaria,lugar_nacimiento,titulo,id_legales,saldo,registro_activo) VALUES ('Adrian, Joshua, Mary, Sophia','Shafira, Chancellor, Cameran, Mark','Rush','Lott',4,'Zaragoza','11/08/2000','6322 Neque Av.','tortor.nibh@dapibusidblandit.ca','UTH32OMK0SG',20,'1615080708699','P.O. Box 708, 3322 Libero. Av.','-0.3730494878','medellin','Sr.',1,'342 073','Y');		
-INSERT INTO usuarios (nombre1,nombre2,apellido1,apellido2,id_identificacion,nacionalidad,fecha_nacimiento,direccion,correo,contraseÃ±a,id_ciudad_residencia,celular,direccion2,Zona_horaria,lugar_nacimiento,titulo,id_legales,saldo,registro_activo) VALUES ('Carlos, Aquila, Shad, Kuame','Derek, Alexa, Leigh, Claire','Mcgee','Bradford',3,'Fort Providence','11/08/2000','632-6122 Eu Rd.','odio.Etiam.ligula@risus.org','LXL70AOP0TJ',12,'1628082043899','3670 Felis Rd.','0.2164681861','bogota','Sra.',1,'466 776','Y');		
-
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Maison', 'Demott', 'Dudgeon', 'Formby', 2, 'Argentina', '16/12/1986', '1606 Calypso Hill','fulano5@correo.com', '5Yksgjf', 23, 3397706296, '675 Truax Drive', 'Bogota - Lima - Quito', 'Putumayo', 'Señor', 1, 586115, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Abran', 'Winfield', 'Piolli', 'Probat', 1, 'Peru', '16/01/1999', '88687 Leroy Junction','fulano4@correo.com', 'L5iyX4K1', 7, 3492910457, '8711 Linden Drive', 'Bogota - Lima - Quito', 'Cali', 'Señor', 1, 706183, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion, correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Milt', 'Balduin', 'Banasik', 'Greenway', 4, 'Peru', '07/05/1998', '22 Grim Place','fulano3@correo.com', 'vflXVZjICJb', 1, 3474519958, '1 Westport Plaza', 'Bogota - Lima - Quito', 'Manizales', 'Señor', 2, 431946, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Darnall', 'Sampson', 'Basillon', 'Chomicki', 3, 'Colombia', '16/05/2002', '0095 Clarendon Center','fulano2@correo.com.co', 'uYF3cQ', 12, 3608672170, '6 Esker Plaza', 'Bogota - Lima - Quito', 'Pereira', 'Señor', 2, 428491, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion, correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Adamo', 'Brok', 'Rawcliff', 'Itzhak', 5, 'Peru', '22/05/1998', '341 Sauthoff Alley','fulano@correo.com', 'EPQ51v1', 15, 3093277170, '35 Coolidge Circle', 'Bogota - Lima - Quito', 'Bogota', 'Señor', 1, 367366, 'Y');
 
 
 --equipos
@@ -212,7 +211,7 @@ INSERT INTO equipos (nombre,registro_activo) VALUES ('cali','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('tigres','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('santa fe','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('cucuta','Y');
-INSERT INTO equipos (nombre,registro_activo) VALUES ('junior','');
+INSERT INTO equipos (nombre,registro_activo) VALUES ('junior','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('chico','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('nacional','Y');
 INSERT INTO equipos (nombre,registro_activo) VALUES ('america','Y');
