@@ -82,4 +82,3 @@ WHEN da.porcentaje_mas_apostado  is not null then da.porcentaje_mas_apostado
 WHEN da.porcentaje_menos_apostado  is not null then da.porcentaje_menos_apostado ELSE  0 end) CUOTA_MAXIMA
 FROM  detalle_apuestas da
 WHERE 
-

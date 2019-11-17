@@ -242,7 +242,3 @@ insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensua
 
 
 
-
-
-
-
