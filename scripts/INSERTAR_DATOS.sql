@@ -265,3 +265,14 @@ insert into tipos_apuestas
 (id_cronograma,tipo_apuesta,porcentaje_equipo1,porcentaje_equipo2,estado, registro_activo)
 values
 (1,'mano a mano',3,5,'FINALIZADA','Y');
+
+
+--detalle apuesta--
+insert into detalle_apuesta
+(id_apuesta,id_tipo_apuesta,estado,opcion_equipo2,valor_apostado,valor_ganado,porcentaje_equipo2_apostado,registro_activo)
+values
+(1,1,'Ganada','Y',30000,150000,5,'Y');
+
+
+
+update apuestas set total = 30000,total_ganado =1500000 where id =1;
