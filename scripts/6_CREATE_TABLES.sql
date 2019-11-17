@@ -382,6 +382,7 @@ registro_activo VARCHAR2(1) NOT NULL
  
 CREATE  TABLE identificacion(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+numeroid NUMBER(22,0) not null,
 tipo_doc VARCHAR2(255) NOT NULL,
 fecha_expedicion date not null,
 id_ciudad_expedicion NUMBER(22,0) not null,
