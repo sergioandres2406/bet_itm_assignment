@@ -39,8 +39,7 @@ registro_activo VARCHAR2(255) NOT NULL
 
 CREATE  TABLE cronograma_partidos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
-fecha DATE NOT NULL,
-hora NUMBER(22,0) NOT NULL,
+fecha TIMESTAMP NOT NULL,
 id_equipo1 NUMBER(22,0) NOT NULL,
 id_equipo2 NUMBER(22,0) NOT NULL,
 ganador NUMBER(22,0),
@@ -243,7 +242,7 @@ CREATE  TABLE apuestas(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 fecha_apuesta TIMESTAMP DEFAULT SYSDATE NOT NULL,
 id_usuario NUMBER(22,0) NOT NULL,
-total NUMBER(22,0) NOT NULL,
+total NUMBER(22,0),
 total_ganado NUMBER(22,0),
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
@@ -368,7 +367,7 @@ CREATE  TABLE medio_pago(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nombre VARCHAR2(255) NOT NULL,
 valor_maximo NUMBER(22,0) not null,
-valor_minmo NUMBER(22,0) NOT NULL,
+valor_minimo NUMBER(22,0) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
 
@@ -383,6 +382,7 @@ registro_activo VARCHAR2(1) NOT NULL
  
 CREATE  TABLE identificacion(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+numeroid NUMBER(22,0) not null,
 tipo_doc VARCHAR2(255) NOT NULL,
 fecha_expedicion date not null,
 id_ciudad_expedicion NUMBER(22,0) not null,
@@ -469,12 +469,16 @@ ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
  
  
  
-CREATE  TABLE limites_bloqueos(
+create  TABLE limites_bloqueos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_usuario NUMBER(22,0) not null,
-diario NUMBER(22,0) not null,
-semanal NUMBER(22,0) not null,
-mensual NUMBER(22,0) not null,
+fecha_ultima_modificacion TIMESTAMP DEFAULT SYSDATE NOT NULL,
+montodiario NUMBER(22,0),
+montosemanal NUMBER(22,0),
+montomensual NUMBER(22,0),
+perdidadiario NUMBER(22,0),
+perdidasemanal NUMBER(22,0),
+perdidamensual NUMBER(22,0),
 tiempo_cerrar_sesion NUMBER(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
@@ -485,7 +489,9 @@ registro_activo VARCHAR2(1) NOT NULL
  add constraint CK_REGISTRO_ACTIVO_limites_bloqueos
  CHECK (registro_activo IN ('Y','N'));
   
-  
+  alter table limites_bloqueos
+ add constraint CK_MONTOdiario_limites_bloqueos
+ CHECK (montodiario > 0);
   
  
 CREATE  TABLE legales(
@@ -584,7 +590,7 @@ registro_activo VARCHAR2(1) NOT NULL
       
        ALTER TABLE usuarios ADD CONSTRAINT FK_LEGALES FOREIGN KEY (id_legales)
 	  REFERENCES legales (id) ENABLE;
-      ALTER TABLE usuarios ADD constraint FK_legales_unico unique(id_legales);
+      
       
       
       
