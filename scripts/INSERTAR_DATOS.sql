@@ -232,6 +232,15 @@ INSERT INTO bancos (nombre,registro_activo) VALUES ('Caja social','Y');
 		
 
 
+--limites bloqueos
+
+insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (3, 80884, 339745, 1387179, 28867, 276014, 543689, 9, 'Y');
+insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (2, 55239, 432740, 1632064, 23784, 43435, 406036, 4, 'Y');
+insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (1, 66579, 373092, 1942937, 16731, 250045, 687278, 6, 'Y');
+insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (4, 64408, 324100, 1091580, 42875, 58174, 444839, 10, 'Y');
+insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (5, 78266, 294409, 1137049, 16351, 162931, 536594, 8, 'Y');
+
+
 
 
 
