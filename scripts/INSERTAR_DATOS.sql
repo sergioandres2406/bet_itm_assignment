@@ -121,7 +121,7 @@ insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('HUILA',1, 
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('LA GUAJIRA',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('MAGDALENA',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('META',1, 'Y');
-insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('NARI�O',1, 'Y');
+insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('NARIÑO',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('NORTE SANTANDER',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('QUINDIO',1, 'Y');
 insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('RISARALDA',1, 'Y');
@@ -142,3 +142,103 @@ insert into DEPARTAMENTOS (nombre, id_pais, registro_activo) values ('VICHADA',1
 /* CIUDADES DE ANTIOQUIA */
 
 INSERT INTO CIUDADES (id_departamento, nombre, codigo_zip,registro_activo) values (1,);
+
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (1,'Medellin','51213','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (2,'Barranquilla','70119','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (3,'Cartagena','11513','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (4,'Tunja','20619','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (5,'Manizales','21708','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (6,'Meta','11514','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (7,'Popayan','71507','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (8,'Valledupar','70410','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (9,'Monteria','10100','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (10,'Bogota','40800','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (11,'Quibdo','61608','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (12,'Neiva','61200','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (13,'Riohacha','70500','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (14,'SantaMarta','60603','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (15,'Villavicencio','40409','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (16,'Pasto','40205','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (17,'Santander','10815','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (18,'Sincelejo','11317','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (19,'ibague','41500','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (20,'Cali','70904','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (21,'Arauca','41619','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (22,'Yopal','11318','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (23,'Mocoa','51800','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (24,'Sandres y providencia','40009','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (25,'Leticia','70914','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (26,'Inirida','50112','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (27,'Sanjose','50414','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (28,'Mitu','20818','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (29,'Puerto Carreño','60915','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (30,'Puerto Carreño','90815','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (31,'Puerto Carreño','70315','Y');
+INSERT INTO `ciudades` (`id_departamento`,`nombre`,`codigo`,`registro_activo`) VALUES (32,'Puerto Carreño','40915','Y');
+
+
+medios_pago
+
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('VISA',352600,323233,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('PUNTORED',5464.22,726901,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('MASTERCARD',551313,348100,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('EFECTY',835513,424770,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('PUNTORED',620621,567361,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('DIMONEX',956629,3395.01,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('BONUSCODE',718634,907315,'Y');
+INSERT INTO `medio_pago` (`Nombre`,`valor_maximo`,`valor_minimo`,`registro_activo`) VALUES ('BALOTO',$447145,$656807,'Y');
+
+
+identificacion
+
+
+
+INSERT INTO `identificacion` (`Numeroid`,`tipo_doc`,`fecha_exp`,`id_ciuda_exp`,`registro_activo`) VALUES ('43948695','Cc','11/02/2006',4,'Y');
+INSERT INTO `identificacion` (`Numeroid`,`tipo_doc`,`fecha_exp`,`id_ciuda_exp`,`registro_activo`) VALUES ('41632860','Cc','11/02/2006',22,'Y');
+INSERT INTO `identificacion` (`Numeroid`,`tipo_doc`,`fecha_exp`,`id_ciuda_exp`,`registro_activo`) VALUES ('38875079','Ce','11/02/2006',18,'Y');
+INSERT INTO `identificacion` (`Numeroid`,`tipo_doc`,`fecha_exp`,`id_ciuda_exp`,`registro_activo`) VALUES ('49057670','Cc','11/02/2006',29,'Y');
+INSERT INTO `identificacion` (`Numeroid`,`tipo_doc`,`fecha_exp`,`id_ciuda_exp`,`registro_activo`) VALUES ('9860895','Pasaporte','11/02/2006',1,'Y');
+
+
+legales
+INSERT INTO `legales` (`terminos_condiciones`,`autorizacion_recepcion_info`,`registro_activo`) VALUES ('Y','Y','Y');
+INSERT INTO `legales` (`terminos_condiciones`,`autorizacion_recepcion_info`,`registro_activo`) VALUES ('Y','N','Y');
+
+
+
+usuarios 
+
+INSERT INTO `usuarios` (`nombre1`,`nombre2`,`apellido1`,`apellido2`,`id_identificacion`,`nacionalidad`,`fechanacimiento`,`direccion`,`correo`,`contraseña`,`celular`,`direccion2`,`zona_horaria`,`id_lugar_nacimiento`,`titulo`,`id_legales`,`saldo`,`registro_activo`) VALUES ('Blaze, Palmer, Elton, Mira','Summer, Savannah, Cynthia, Kyle','Rojas','Humphrey',4,'Malbaie','11/08/2000','5409 Urna Avenue','amet.lorem.semper@vitaesemper.net','QOY16III7DO','1664052011299','Ap #676-4696 Odio. Ave','0.2673018296',9,'Sra.',2,'551 920','Y');
+INSERT INTO `usuarios` (`nombre1`,`nombre2`,`apellido1`,`apellido2`,`id_identificacion`,`nacionalidad`,`fechanacimiento`,`direccion`,`correo`,`contraseña`,`celular`,`direccion2`,`zona_horaria`,`id_lugar_nacimiento`,`titulo`,`id_legales`,`saldo`,`registro_activo`) VALUES ('Hayden, Dawn, Avye, Ahmed','Carter, Hannah, Linus, Upton','Chang','Bond',5,'Westlock','11/08/2000','695-9015 Iaculis, Ave','Quisque.libero@netusetmalesuada.net','AJM81WBI2JY','1651012471099','Ap #957-7548 Et, St.','0.007944652',27,'Sr',2,'353 810','Y');
+INSERT INTO `usuarios` (`nombre1`,`nombre2`,`apellido1`,`apellido2`,`id_identificacion`,`nacionalidad`,`fechanacimiento`,`direccion`,`correo`,`contraseña`,`celular`,`direccion2`,`zona_horaria`,`id_lugar_nacimiento`,`titulo`,`id_legales`,`saldo`,`registro_activo`) VALUES ('Kato, Harriet, Magee, Gemma','Kirk, Hammett, Kareem, Lucian','Velasquez','Hardy',5,'Heusweiler','11/08/2000','P.O. Box 944, 4660 Elementum Rd.','venenatis.vel.faucibus@mus.edu','NJS80QGO4ON','1668072963099','2859 Lorem. St.','-0.3182219966',21,'Sra.',2,'484 139','Y');
+INSERT INTO `usuarios` (`nombre1`,`nombre2`,`apellido1`,`apellido2`,`id_identificacion`,`nacionalidad`,`fechanacimiento`,`direccion`,`correo`,`contraseña`,`celular`,`direccion2`,`zona_horaria`,`id_lugar_nacimiento`,`titulo`,`id_legales`,`saldo`,`registro_activo`) VALUES ('Adrian, Joshua, Mary, Sophia','Shafira, Chancellor, Cameran, Mark','Rush','Lott',4,'Zaragoza','11/08/2000','6322 Neque Av.','tortor.nibh@dapibusidblandit.ca','UTH32OMK0SG','1615080708699','P.O. Box 708, 3322 Libero. Av.','-0.3730494878',16,'Sr.',1,'342 073','Y');
+INSERT INTO `usuarios` (`nombre1`,`nombre2`,`apellido1`,`apellido2`,`id_identificacion`,`nacionalidad`,`fechanacimiento`,`direccion`,`correo`,`contraseña`,`celular`,`direccion2`,`zona_horaria`,`id_lugar_nacimiento`,`titulo`,`id_legales`,`saldo`,`registro_activo`) VALUES ('Carlos, Aquila, Shad, Kuame','Derek, Alexa, Leigh, Claire','Mcgee','Bradford',3,'Fort Providence','11/08/2000','632-6122 Eu Rd.','odio.Etiam.ligula@risus.org','LXL70AOP0TJ','1628082043899','3670 Felis Rd.','0.2164681861',1,'Sra.',1,'466 776','Y');
+
+
+equipos
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('junior','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('cali','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('tigres','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('santa fe','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('cucuta','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('junior','');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('chico','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('nacional','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('america','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('medellin','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('santa fe','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('tolima','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('huila','Y');
+
+
+bancos
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('bancolombia','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('banco de bogota','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('avvillas','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('davivienda','Y');
+INSERT INTO `equipos` (`nombre`,`registro_activo`) VALUES ('Caja social','Y');
+
+
+
+
+
