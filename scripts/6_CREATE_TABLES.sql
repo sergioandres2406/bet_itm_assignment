@@ -1,6 +1,9 @@
 
 ---alter session set "_ORACLE_SCRIPT"=true; 
  
+ 
+ 
+ drop table sesiones cascade constraints;
 drop table equipos cascade constraints ;
 drop table cronograma_partidos cascade constraints ;
 drop table tipos_apuestas cascade constraints ;
@@ -23,6 +26,25 @@ drop table paises cascade constraints ;
 drop table bonos cascade constraints ;
 drop table limites_bloqueos cascade constraints ;
 drop table legales cascade constraints ;
+
+
+crEate table sesiones(
+
+id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+Ip varchar2(255) not null,
+id_usuario NUMBER(22,0) not null,
+fecha_inicio_sesion DEFAULT SYSDATE NOT NULL
+estado varchar2(255) not null,
+registro_activo VARCHAR2(255) NOT NULL
+
+);
+
+
+/*CONSTRAINTS equipos */
+ alter table sesiones
+ add constraint CK_REGISTRO_ACTIVO_SESIONES
+ CHECK (registro_activo IN ('Y','N'));
+
 
 CREATE  TABLE equipos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -466,7 +488,7 @@ registro_activo VARCHAR2(1) NOT NULL
 ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
   
  
- 
+ select * from limites_bloqueos;
  
  
 create  TABLE limites_bloqueos(
