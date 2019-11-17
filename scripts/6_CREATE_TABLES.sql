@@ -472,6 +472,7 @@ ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
 create  TABLE limites_bloqueos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_usuario NUMBER(22,0) not null,
+fecha_ultima_modificacion TIMESTAMP DEFAULT SYSDATE NOT NULL,
 montodiario NUMBER(22,0),
 montosemanal NUMBER(22,0),
 montomensual NUMBER(22,0),
