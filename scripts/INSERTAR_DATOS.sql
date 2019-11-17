@@ -177,6 +177,8 @@ INSERT INTO medio_pago (nombre,valor_maximo,valor_minimo,registro_activo) VALUES
 INSERT INTO medio_pago (nombre,valor_maximo,valor_minimo,registro_activo) VALUES ('BONUSCODE',718634,907315,'Y');		
 INSERT INTO medio_pago (nombre,valor_maximo,valor_minimo,registro_activo) VALUES ('BALOTO',447145,656807,'Y');		
 		
+        
+        
 
 
 --identificacion
@@ -198,11 +200,14 @@ INSERT INTO legales(terminos_condiciones,autorizacion_recepcion_info,registro_ac
 INSERT INTO legales (terminos_condiciones,autorizacion_recepcion_info,registro_activo) VALUES ('Y','N','Y');
 
 --usuarios 
-insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Maison', 'Demott', 'Dudgeon', 'Formby', 2, 'Argentina', '16/12/1986', '1606 Calypso Hill','fulano5@correo.com', '5Yksgjf', 23, 3397706296, '675 Truax Drive', 'Bogota - Lima - Quito', 'Putumayo', 'Señor', 1, 586115, 'Y');
-insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Abran', 'Winfield', 'Piolli', 'Probat', 1, 'Peru', '16/01/1999', '88687 Leroy Junction','fulano4@correo.com', 'L5iyX4K1', 7, 3492910457, '8711 Linden Drive', 'Bogota - Lima - Quito', 'Cali', 'Señor', 1, 706183, 'Y');
-insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion, correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Milt', 'Balduin', 'Banasik', 'Greenway', 4, 'Peru', '07/05/1998', '22 Grim Place','fulano3@correo.com', 'vflXVZjICJb', 1, 3474519958, '1 Westport Plaza', 'Bogota - Lima - Quito', 'Manizales', 'Señor', 2, 431946, 'Y');
-insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Darnall', 'Sampson', 'Basillon', 'Chomicki', 3, 'Colombia', '16/05/2002', '0095 Clarendon Center','fulano2@correo.com.co', 'uYF3cQ', 12, 3608672170, '6 Esker Plaza', 'Bogota - Lima - Quito', 'Pereira', 'Señor', 2, 428491, 'Y');
-insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion, correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('Adamo', 'Brok', 'Rawcliff', 'Itzhak', 5, 'Peru', '22/05/1998', '341 Sauthoff Alley','fulano@correo.com', 'EPQ51v1', 15, 3093277170, '35 Coolidge Circle', 'Bogota - Lima - Quito', 'Bogota', 'Señor', 1, 367366, 'Y');
+
+
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('fulano0', 'de', 'tal', 'cual0', 1, 'Colombia', '16/05/2002', '0093 Clarendon Center','fulano2@correo.com.co', 'uYF3cQ', 12, 3608672170, '6 Esker Plaza', 'Bogota - Lima - Quito', 'Pereira', 'Señor', 2, 150000, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('fulano1', 'de', 'tal', 'cual1', 2, 'Colombia', '16/08/2000', '0095 Clarendon Center','fulano3@correo.com.co', 'uYdfdf', 11, 3608672170, '6 Esker mall', 'Bogota - Lima - Quito', 'Manizales', 'Señor', 2, 200000, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('fulano2', 'de', 'tal', 'cual2', 3, 'Colombia', '16/08/2002', '0098 parque Center','fulano4@correo.com.co', 'dgfhtyt', 10, 3604672170, '6ta de prado', 'Bogota - Lima - Quito', 'Medellin', 'Señor', 2, 450000, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('fulano3', 'de', 'tal', 'cual3', 4, 'Colombia', '16/07/2001', '0096 parque Center','fulano5@correo.com.co', 'Ferse4', 8, 3608552143, '6ta de prado', 'Bogota - Lima - Quito', 'Medellin', 'Señor', 2, 120000, 'Y');
+insert into usuarios (nombre1, nombre2, apellido1, apellido2, id_identificacion, nacionalidad, fecha_nacimiento, direccion,correo, contraseña, id_ciudad_residencia, celular, direccion2, zona_horaria, lugar_nacimiento, titulo, id_legales, saldo, registro_activo) values ('fulano4', 'de', 'tal', 'cual4', 5, 'Colombia', '16/07/2005', '0097 parque Center','fulano6@correo.com.co', 'O8uedfd', 3, 3608552147, '6ta de prado', 'Bogota - Lima - Quito', 'Medellin', 'Señor', 2, 120000, 'Y');
+
 
 
 --equipos
@@ -240,5 +245,9 @@ insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensua
 insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (4, 64408, 324100, 1091580, 42875, 58174, 444839, 10, 'Y');
 insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensual, perdidadiario, perdidasemanal, perdidamensual, tiempo_cerrar_sesion, registro_activo) values (5, 78266, 294409, 1137049, 16351, 162931, 536594, 8, 'Y');
 
+
+--prueba en apuestas
+
+insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('17/11/2019 3:00:00 PM', 1, 'Y');
 
 

@@ -1,8 +1,8 @@
 
----alter session set "_ORACLE_SCRIPT"=true; 
+ alter session set "_ORACLE_SCRIPT"=true; 
+ alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';
  
- 
- 
+
 drop table sesiones cascade constraints;
 drop table equipos cascade constraints ;
 drop table cronograma_partidos cascade constraints ;
@@ -629,7 +629,8 @@ registro_activo VARCHAR2(1) NOT NULL
 	  REFERENCES paises (id) ENABLE;
       
       
-       ALTER TABLE limites_bloqueos ADD CONSTRAINT FK_usuario_bloqueos FOREIGN KEY (id_usuario)
+      
+      ALTER TABLE limites_bloqueos ADD CONSTRAINT FK_limites_bloqueos_usuarios FOREIGN KEY (id_usuario)
 	  REFERENCES usuarios (id) ENABLE;
       
       
