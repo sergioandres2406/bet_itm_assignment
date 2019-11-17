@@ -73,6 +73,7 @@ goles_tiempo2 NUMBER(22,0),
 estado VARCHAR2(255) NOT NULL,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
+
 /*CONSTRAINTS */
  alter table cronograma_partidos
  add constraint CK_REGISTRO_ACTIVO_CRONOGRAMA

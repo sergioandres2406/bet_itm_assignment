@@ -1,3 +1,4 @@
+alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';
 --select * from bonos;
 /* INSERTAMOS DATOS EN LA TABLA BONOS,  PARA HABILITAR BONOS DE 10000 peso hasta 50000*/
 insert into BONOS (codigo, valor, registro_activo) values ('rSI8n', 40000, 'Y');
@@ -249,5 +250,18 @@ insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensua
 --prueba en apuestas
 
 insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('17/11/2019 3:00:00 PM', 1, 'Y');
+insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('17/11/2019 3:00:00 PM', 2, 'Y');
+insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('16/11/2019 5:00:00 PM', 3, 'Y');
 
 
+
+--CRONOGRAMA_PARTIDOS--
+insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, ganador, goles_equipo1, goles_equipo2, ganador_tiempo1, ganador_tiempo2, estado, registro_activo) 
+values ('17/11/2019 03:00:00 PM', 4, 2, 2, 1, 2, 4, 2, 'FINALIZADO', 'Y');
+
+
+--tipos apuestas --
+insert into tipos_apuestas 
+(id_cronograma,tipo_apuesta,porcentaje_equipo1,porcentaje_equipo2,estado, registro_activo)
+values
+(1,'mano a mano',3,5,'FINALIZADA','Y');
