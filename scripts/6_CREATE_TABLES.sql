@@ -3,7 +3,7 @@
  
  
  
- drop table sesiones cascade constraints;
+drop table sesiones cascade constraints;
 drop table equipos cascade constraints ;
 drop table cronograma_partidos cascade constraints ;
 drop table tipos_apuestas cascade constraints ;
@@ -28,15 +28,14 @@ drop table limites_bloqueos cascade constraints ;
 drop table legales cascade constraints ;
 
 
-crEate table sesiones(
 
+create table sesiones(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-Ip varchar2(255) not null,
+ip varchar2(255) not null,
 id_usuario NUMBER(22,0) not null,
-fecha_inicio_sesion DEFAULT SYSDATE NOT NULL
+fecha_inicio_sesion TIMESTAMP DEFAULT SYSDATE NOT NULL,
 estado varchar2(255) not null,
-registro_activo VARCHAR2(255) NOT NULL
-
+registro_activo varchar2(255) NOT NULL
 );
 
 
@@ -488,10 +487,7 @@ registro_activo VARCHAR2(1) NOT NULL
 ALTER TABLE BONOS ADD constraint FK_identificacion_unica_BONOS unique(codigo);
   
  
- select * from limites_bloqueos;
- 
- 
-create  TABLE limites_bloqueos(
+ create  TABLE limites_bloqueos(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 id_usuario NUMBER(22,0) not null,
 fecha_ultima_modificacion TIMESTAMP DEFAULT SYSDATE NOT NULL,
