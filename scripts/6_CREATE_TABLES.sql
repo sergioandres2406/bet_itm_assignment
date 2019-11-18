@@ -36,7 +36,7 @@ id_usuario NUMBER(22,0) not null,
 fecha_inicio_sesion TIMESTAMP DEFAULT SYSDATE NOT NULL,
 estado varchar2(255) not null,
 registro_activo varchar2(255) NOT NULL
-);
+)TABLESPACE BET_ITM;
 
 
 /*CONSTRAINTS equipos */
