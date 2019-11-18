@@ -544,3 +544,84 @@ END;
 
 
 
+
+
+
+/*    trigger ii que   ACTUALIZA SALDO USUARIOS  -    */
+
+
+/*  ACTUALIZA SALDO DESPUES DE UN DEPOSITO */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_DEPOSITO 
+AFTER  INSERT OR UPDATE ON DEPOSITOS 
+FOR EACH ROW 
+WHEN (NEW.ESTADO = 'EXITOSO') 
+DECLARE 
+   saldo_actual number;
+   valor_deposito number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN 
+    usuario := :NEW.id_usuario;
+   select saldo into saldo_actual from usuarios where id = usuario;
+   valor_deposito := :NEW.valor;
+   saldo_nuevo := saldo_actual+valor_deposito;
+    update usuarios set saldo = saldo_nuevo where id=usuario;
+END; 
+
+
+
+
+/*  ACTUALIZA SALDO DESPUES DE UN RETIRO */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_RETIROS 
+AFTER  INSERT OR UPDATE ON RETIROS 
+FOR EACH ROW 
+WHEN (NEW.ESTADO = 'EXITOSO') 
+DECLARE 
+   saldo_actual number;
+   valor_retiro number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN 
+    usuario := :NEW.id_usuario;
+   select saldo into saldo_actual from usuarios where id = usuario;
+   valor_retiro := :NEW.valor;
+   saldo_nuevo := saldo_actual-valor_retiro;
+    update usuarios set saldo = saldo_nuevo where id=usuario;
+END; 
+
+
+
+/*  ACTUALIZA SALDO DESPUES DE UNA APUESTA */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_APUESTA
+AFTER  INSERT OR UPDATE ON APUESTAS 
+FOR EACH ROW 
+
+DECLARE 
+   saldo_actual number;
+   valor_apostado number;
+    valor_ganado number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN    
+     valor_apostado :=NVL(:NEW.total,'0');
+     valor_ganado := NVL(:NEW.total_ganado,'0');
+     select saldo into saldo_actual from usuarios where id = usuario;
+     
+     if valor_apostado > 0 or valor_ganado >0 then
+        saldo_nuevo := saldo_actual - valor_apostado;
+        saldo_nuevo := saldo_actual + valor_ganado;
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+     end if;
+       
+END; 
+
+

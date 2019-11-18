@@ -219,6 +219,7 @@ fecha_desembolso DATE,
 id_banco NUMBER(22,0) NOT NULL,
 estado varchar2(255) NOT NULL,
 validacion_documentos varchar2(1) NOT NULL,
+valor number(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
   
@@ -332,7 +333,7 @@ id_medio_pago NUMBER(22,0) not null,
 id_usuario NUMBER(22,0) not NULL,
 fecha_deposito TIMESTAMP DEFAULT SYSDATE NOT NULL,
 valor NUMBER(22,0) NOT NULL,
-estado varchar2(1) not null,
+estado varchar2(255) not null,
 registro_activo VARCHAR2(1) NOT NULL
 ) TABLESPACE BET_ITM;
 
