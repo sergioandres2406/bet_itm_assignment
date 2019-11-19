@@ -1,0 +1,27 @@
+CREATE OR REPLACE FUNCTION F_Validar_Session(id_cliente number) return BOOLEAN
+IS
+CANTIDAD_SESSIONES NUMBER;
+BEGIN
+
+SELECT COUNT(id) INTO CANTIDAD_SESSIONES FROM sesiones WHERE ID_USUARIO= id_cliente AND ESTADO='Activo';
+
+IF CANTIDAD_SESSIONES>0 THEN
+RETURN TRUE;
+   ELSE   
+   RETURN FALSE;
+   END IF;
+
+END ;
+
+---PROBAR LA FUNCIÓN
+set serveroutput on
+declare
+SESSION_VALIDA VARCHAR(100);
+
+BEGIN
+SESSION_VALIDA := case F_Validar_Session(1251) when true then 'true' when false then 'false' else NULL end;
+
+ DBMS_OUTPUT.PUT_LINE(SESSION_VALIDA);
+
+END;
+
