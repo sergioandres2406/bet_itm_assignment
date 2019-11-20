@@ -271,7 +271,7 @@ values
 insert into detalle_apuesta
 (id_apuesta,id_tipo_apuesta,estado,opcion_equipo2,valor_apostado,valor_ganado,porcentaje_equipo2_apostado,registro_activo)
 values
-(1,1,'Ganada','Y',30000,150000,5,'Y');
+(1,1,'GANADA','Y',30000,150000,5,'Y');
 
 
 

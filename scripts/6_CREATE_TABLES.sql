@@ -204,10 +204,9 @@ registro_activo VARCHAR2(1) NOT NULL
   
  alter table detalle_apuesta
  add constraint CK_ESTADO_APUESTAS
- CHECK (estado IN ('Abierta','Ganada','Perdida','vendida','Cancelada','Reembolsada','Invalida','Rechazado','Pedido','Parte aprobada'));
+ CHECK (estado IN ('ABIERTA','GANADA','PERDIDA','VENDIDA','CANCELADA','REEMBOLSADA','INVALIDA','RECHAZADA','PEDIDO','PARTE APROBADA'));
  
- 
- 
+  
  
 
  

@@ -564,11 +564,22 @@ DECLARE
    saldo_nuevo number;
    usuario number;
 BEGIN 
+
     usuario := :NEW.id_usuario;
    select saldo into saldo_actual from usuarios where id = usuario;
    valor_deposito := :NEW.valor;
    saldo_nuevo := saldo_actual+valor_deposito;
-    update usuarios set saldo = saldo_nuevo where id=usuario;
+
+    IF INSERTING THEN 
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	IF UPDATING THEN 
+		 update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	
+    
 END; 
 
 
@@ -592,7 +603,15 @@ BEGIN
    select saldo into saldo_actual from usuarios where id = usuario;
    valor_retiro := :NEW.valor;
    saldo_nuevo := saldo_actual-valor_retiro;
-    update usuarios set saldo = saldo_nuevo where id=usuario;
+   
+   IF INSERTING THEN 
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	IF UPDATING THEN 
+		 update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
 END; 
 
 
@@ -612,16 +631,90 @@ DECLARE
    saldo_nuevo number;
    usuario number;
 BEGIN    
+     usuario := :NEW.id_usuario;
      valor_apostado :=NVL(:NEW.total,'0');
      valor_ganado := NVL(:NEW.total_ganado,'0');
      select saldo into saldo_actual from usuarios where id = usuario;
      
-     if valor_apostado > 0 or valor_ganado >0 then
+     IF INSERTING THEN 
+        
+        if valor_apostado > 0 or valor_ganado >0 then
+            saldo_nuevo := saldo_actual - valor_apostado;
+            saldo_nuevo := saldo_actual + valor_ganado;
+            update usuarios set saldo = saldo_nuevo where id=usuario;
+        end if;
+     
+    END IF;
+   
+   	IF UPDATING THEN 
+		 if valor_apostado > 0 or valor_ganado >0 then
         saldo_nuevo := saldo_actual - valor_apostado;
         saldo_nuevo := saldo_actual + valor_ganado;
         update usuarios set saldo = saldo_nuevo where id=usuario;
      end if;
+    END IF;
+     
+    
        
 END; 
 
+
+
+/* ACTUALIZA APUESTAS DESPUES DE  ACTUALIZAR DETALLE APUESTAS */
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_DETALLE_APUESTAS
+AFTER  INSERT OR UPDATE ON DETALLE_APUESTA 
+FOR EACH ROW 
+
+DECLARE 
+   det_id_detalle_apuesta number;
+   det_id_apuesta number;
+   total_apuesta_actual number;
+   total_ganado_actual number;
+    det_valor_ganado number;
+    det_valor_apostado number;
+   apuesta_total_nueva number;
+   ganancia_total_nueva number;
+   saldo_actual_usuario number;
+   usuario number;
+   estado varchar2(255);
+   
+BEGIN    
+    det_id_detalle_apuesta := :NEW.id;
+    det_id_apuesta := :NEW.id_apuesta;
+    select total into total_apuesta_actual from apuestas where id = det_id_apuesta;
+    select total_ganado into total_ganado_actual from apuestas where id = det_id_apuesta;
+    det_valor_ganado := NVL(:NEW.valor_ganado,'0');
+    det_valor_apostado := NVL(:NEW.valor_apostado,'0'); 
+    select id_usuario into usuario from apuestas where  id = det_id_apuesta;
+    select saldo into saldo_actual_usuario from usuarios where  id = usuario;
+     
+     IF INSERTING THEN 
+        IF saldo_actual_usuario >= det_valor_apostado then
+            if estado =  'VENDIDA' then
+                apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
+                update apuestas set total = apuesta_total_nueva where id = det_id_apuesta;            
+            end if;
+            if estado =  'GANADA' then
+                ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
+                update apuestas set total_ganado = ganancia_total_nueva;            
+            end if;
+        END IF;
+        IF saldo_actual_usuario < det_valor_apostado then
+            UPDATE DETALLE_APUESTA SET ESTADO = 'RECHAZADA' where  id= det_id_detalle_apuesta;
+        END IF;
+    END IF;
+   
+   
+   	IF UPDATING THEN 
+		 if estado =  'GANADA' then
+                ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
+                update apuestas set total_ganado = ganancia_total_nueva;            
+         end if;
+         if estado =  'REEMBOLSADA' then
+                apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
+                update apuestas set total = apuesta_total_nueva;            
+         end if;
+    END IF;      
+END; 
 
