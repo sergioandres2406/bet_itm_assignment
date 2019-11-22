@@ -276,3 +276,12 @@ values
 
 
 update apuestas set total = 30000,total_ganado =1500000 where id =1;
+
+
+
+----RELACION DE BANCOS VS USUARIOS
+
+
+INSERT INTO BANCOVSUSUARIOS (NRO_CUENTA, ID_BANCO, ID_USUARIO, REGISTRO_ACTIVO) VALUES ('1245454545', '1', '1', 'Y')
+
+

@@ -26,7 +26,7 @@ drop table paises cascade constraints ;
 drop table bonos cascade constraints ;
 drop table limites_bloqueos cascade constraints ;
 drop table legales cascade constraints ;
-
+drop table BANCOVSUSUARIOS cascade constraints ;  
 
 
 create table sesiones(
@@ -633,5 +633,29 @@ registro_activo VARCHAR2(1) NOT NULL
       
       ALTER TABLE limites_bloqueos ADD CONSTRAINT FK_limites_bloqueos_usuarios FOREIGN KEY (id_usuario)
 	  REFERENCES usuarios (id) ENABLE;
+      
+
+      
+ 
+  CREATE TABLE BANCOVSUSUARIOS (
+  ID NUMBER(22,00) GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1) NOT NULL,
+  NRO_CUENTA varchar2(255) NOT NULL,
+  ID_BANCO NUMBER(22,00) NOT NULL,
+  ID_USUARIO NUMBER(22,00) NOT NULL,
+  constraint PK_BANCOVSUSUARIOS primary key (ID),
+  constraint FK_BANCOVSUSUARIOS_USUARIOS
+  foreign key (ID_USUARIO) references USUARIOS(ID) ENABLE,
+  constraint FK_BANCOVSUSUARIOS_BANCOS
+  foreign key (ID_BANCO) references BANCOS(ID) ENABLE,
+  registro_activo VARCHAR2(1) NOT NULL,
+  constraint CK_REGISTRO_ACTIVO_BANCOVSUSUARIOS CHECK (registro_activo IN ('Y','N'))
+   
+) TABLESPACE BET_ITM;
+
+      
+      
+      
+      
+      
       
       
