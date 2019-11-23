@@ -1,27 +1,43 @@
---CREATE OR REPLACE FUNCTION F_Validar_Movimiento(id_cliente number, saldo number, movimiento number) return VARCHAR
---IS
-
-
-set serveroutput on
-DECLARE
-id_cliente number;
-saldo number;
-movimiento number;
-CANTIDAD_DOCUMENTOS NUMBER;
-SALDO_ACTUAL NUMBER;
-BANCO NUMBER;
-MENSAJE VARCHAR(255);
+CREATE OR REPLACE FUNCTION f_validar_movimiento (
+    id_usuarios   NUMBER,
+    monto         NUMBER,
+    movimiento    NUMBER
+) RETURN NUMBER IS
+    cantidad_documentos   NUMBER;
+    saldo_actual          NUMBER;
+    cantidad_bancos       NUMBER;
 BEGIN
-
-id_cliente:=1;
-saldo:=2000;
-movimiento :=1;
-
-
-
-
-
-CANTIDAD_DOCUMENTOS:=NVL(SELECT COUNT(id)   FROM COMPROBANTES_DOCUMENTOS WHERE ID_USUARIO=id_cliente AND registro_activo='Y' group by TIPO),0);
+    SELECT
+        u.saldo,
+        nvl(cp.cantidad_documento, 0) cantidad_documento,
+        nvl(b.cantidad_bancos, 0) cantidad_bancos
+    INTO
+        saldo_actual,
+        cantidad_documentos,
+        cantidad_bancos
+    FROM
+        usuarios u
+        LEFT JOIN (
+            SELECT
+                id_usuario id_usuario,
+                nvl(COUNT(*), 0) cantidad_documento
+            FROM
+                comprobantes_documentos
+            GROUP BY
+                id_usuario
+        ) cp ON u.id = cp.id_usuario
+        LEFT JOIN (
+            SELECT
+                id_usuario id_usuario,
+                nvl(COUNT(*), 0) cantidad_bancos
+            FROM
+                bancovsusuarios
+            GROUP BY
+                id_usuario
+        ) b ON u.id = b.id_usuario
+    WHERE
+        u.id = id_usuarios
+        AND u.registro_activo = 'Y';
 
 
 /*VERIFICA LA CANTIDAD DE DOCUMENTOS SEA IGUAL A 4 QUE SON LOS SIGUIENTES: 
@@ -32,68 +48,82 @@ C) Identificación con nombre y fecha de nacimiento
 D) Foto personal sosteniendo su documento de identificación legible.
 
 SI NO LOS TIENE RETORNA 1
-*/
-IF CANTIDAD_DOCUMENTOS<4 THEN
- 
--- RETURN 'NOMBRE CON LA DOCUMENTACION REQUERIDA PARA REALIZAR OPERACION';
 
-MENSAJE:='NOMBRE CON LA DOCUMENTACION REQUERIDA PARA REALIZAR OPERACION';
-DBMS_OUTPUT.PUT_LINE(MENSAJE);
-
-END IF;
-
-BANCO=SELECT NVL(COUNT(id),0)   FROM BANCOVSUSUARIOS WHERE ID_USUARIO=id_cliente AND registro_activo='Y';
-
-
-/*VERIFICA LA CANTIDAD DE BANCOS QUE TIENE UN USUARIO Y TIPO MOVIMIENTO, SI NO LO TIENE 
+VERIFICA LA CANTIDAD DE BANCOS QUE TIENE UN USUARIO Y TIPO MOVIMIENTO, SI NO LO TIENE 
 
 TIPOS MOVIMIENTOS
 1: RETIRO
 2: DEPOSITO
 
 RETORNA 2
-*/
-IF BANCO>0 AND movimiento=1  THEN
- 
--- RETURN 'NO TIENE NINGUN BANCO REGISTRADO EN EL SISTEMA';
 
-MENSAJE:='NO TIENE NINGUN BANCO REGISTRADO EN EL SISTEMA';
-DBMS_OUTPUT.PUT_LINE(MENSAJE);
-
-END IF;
-
-
-SELECT NVL(SALDO,0) INTO SALDO_ACTUAL FROM USUARIOS WHERE ID=id_cliente AND registro_activo='Y';
-
-
-/*VERIFICA EL SALDO ACTUAL SI ES NEGATIVO 
+VERIFICA EL SALDO ACTUAL SI ES NEGATIVO 
 RETORNA 3  
-*/
-IF (saldo_actual-saldo)<0 THEN
- 
--- RETURN 'SALDO INSUFICIENTE PARA REALIZAR LA OPERACION';
-
-MENSAJE:='SALDO INSUFICIENTE PARA REALIZAR LA OPERACION';
-DBMS_OUTPUT.PUT_LINE(MENSAJE);
-
-
-
-END IF;
-
-
-/*
-SI TODO ESTA CORRECTO 
-RETORNO 0
 
 */
 
---RETURN 'APROBADO';
+    CASE
+        WHEN cantidad_documentos < 4 THEN
+            RETURN 1;
+        WHEN cantidad_bancos = 0 AND movimiento = 1 THEN
+            RETURN 2;
+        WHEN ( saldo_actual - monto ) < 0 THEN
+            RETURN 3;
+        ELSE
+            RETURN 0;
+    END CASE;
+
+EXCEPTION
+    WHEN no_data_found THEN
+        raise_application_error(-20001, 'USUARIO NO EXISTE');
+END;
+
+SELECT
+    f_validar_movimiento(4545, 200, 1)
+FROM
+    dual;
+
+CREATE OR REPLACE PROCEDURE sp_crear_movimiento (
+    id_usuario   NUMBER,
+    monto        NUMBER,
+    sw           NUMBER,
+    formo_pago   NUMBER
+) IS
+BEGIN
+    IF ( sw = 1 ) THEN
+        INSERT INTO retiros (
+            id_usuario,
+            estado,
+            valor,
+            registro_activo
+        ) VALUES (
+            id_usuario,
+            'PENDIENTE',
+            monto,
+            'Y'
+        );
+
+    ELSE
+        INSERT INTO depositos (
+            id_medio_pago,
+            id_usuario,
+            valor,
+            estado,
+            registro_activo
+        ) VALUES (
+            formo_pago,
+            id_usuario,
+            monto,
+            'PENDIENTE',
+            'Y'
+        );
+
+    END IF;
+END;
+
+EXEC sp_crear_movimiento(1, 20000, 2, 1);
 
 
 
-END ;
-
-
-SELECT '1',F_Validar_Movimiento(1,20000,1) FROM dual
 
 

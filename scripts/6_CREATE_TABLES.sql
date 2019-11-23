@@ -214,10 +214,8 @@ CREATE TABLE retiros(
 id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
 id_usuario NUMBER(22,0) NOT NULL,
 fecha_solicitud TIMESTAMP DEFAULT SYSDATE NOT NULL,
-fecha_desembolso DATE,
-id_banco NUMBER(22,0) NOT NULL,
+fecha_desembolso TIMESTAMP DEFAULT SYSDATE NOT NULL,
 estado varchar2(255) NOT NULL,
-validacion_documentos varchar2(1) NOT NULL,
 valor number(22,0) not null,
 registro_activo VARCHAR2(1) NOT NULL,
 observaciones varchar(255) NULL
@@ -569,10 +567,7 @@ registro_activo VARCHAR2(1) NOT NULL
       ALTER TABLE sesiones ADD CONSTRAINT FK_USUARIO_sesiones FOREIGN KEY (id_usuario)
 	  REFERENCES usuarios (id) ENABLE;
       
-      
-       ALTER TABLE retiros ADD CONSTRAINT FK_BANCO FOREIGN KEY (id_banco)
-	  REFERENCES bancos (id) ENABLE;
-      
+          
       
        ALTER TABLE retiros ADD CONSTRAINT FK_CUENTA_usuario_retiros FOREIGN KEY (id_usuario)
 	  REFERENCES usuarios (id) ENABLE;
