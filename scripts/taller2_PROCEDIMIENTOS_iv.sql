@@ -67,7 +67,7 @@ RETORNA 3
             RETURN 1;
         WHEN cantidad_bancos = 0 AND movimiento = 1 THEN
             RETURN 2;
-        WHEN ( saldo_actual - monto ) < 0 THEN
+        WHEN ( saldo_actual - monto ) < 0 AND movimiento = 1 THEN
             RETURN 3;
         ELSE
             RETURN 0;
@@ -266,4 +266,4 @@ EXCEPTION
         raise_application_error(-20001, 'EL USUARIO NO TIENE MOVIMIENTOS');
 END;
 
-EXEC sp_validar_movimiento(1, 1, 3)
+EXEC sp_validar_movimiento(1, 1, 6)
