@@ -123,7 +123,117 @@ END;
 
 EXEC sp_crear_movimiento(1, 20000, 2, 1);
 
+CREATE OR REPLACE PROCEDURE sp_validar_movimiento (
+    id_usuario      NUMBER,
+    sw              NUMBER,
+    id_movimiento   NUMBER
+) IS
+    estado   NUMBER;
+    monto    NUMBER;
+BEGIN
+    IF sw = 1 THEN
+        SELECT
+            valor
+        INTO monto
+        FROM
+            retiros
+        WHERE
+            id_usuario = id_usuario
+            AND id = id_movimiento
+            AND registro_activo = 'Y' AND ESTADO='PENDIENTE';
+
+    ELSE
+        SELECT
+            valor
+        INTO monto
+        FROM
+            depositos
+        WHERE
+            id_usuario = id_usuario
+            AND id = id_movimiento
+            AND registro_activo = 'Y' AND ESTADO='PENDIENTE';
+
+    END IF;
+
+    SELECT
+        f_validar_movimiento(id_usuario, monto, sw)
+    INTO estado
+    FROM
+        dual;
+
+    IF sw = 1 THEN
+        CASE
+            WHEN estado = 1 THEN
+                UPDATE retiros
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'EL MOVIMIENTO FUE RECHAZADA FALTA DOCUMENTACION'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 2 THEN
+                UPDATE retiros
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'NO TIENE NINGUN BANCO REGISTRADO'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 3 THEN
+                UPDATE retiros
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'SALDO INSUFICIENTE'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 0 THEN
+                UPDATE retiros
+                SET
+                    estado = 'EXITOSO'
+                WHERE
+                    id = id_movimiento;
+        END CASE;
+    ELSE
+        CASE
+            WHEN estado = 1 THEN
+                UPDATE depositos
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'EL MOVIMIENTO FUE RECHAZADA FALTA DOCUMENTACION'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 2 THEN
+                UPDATE depositos
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'NO TIENE NINGUN BANCO REGISTRADO'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 3 THEN
+                UPDATE depositos
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'SALDO INSUFICIENTE'
+                WHERE
+                    id = id_movimiento;
+
+            WHEN estado = 0 THEN
+                UPDATE depositos
+                SET
+                    estado = 'EXITOSO'
+                WHERE
+                    id = id_movimiento;
+        END CASE;
+    END IF;
+
+EXCEPTION
+    WHEN no_data_found THEN
+        raise_application_error(-20001, 'EL USUARIO NO TIENE MOVIMIENTOS');
+END;
 
 
-
+EXEC sp_validar_movimiento (1,1,3)
 
