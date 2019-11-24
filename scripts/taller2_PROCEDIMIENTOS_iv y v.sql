@@ -143,7 +143,7 @@ CREATE OR REPLACE PROCEDURE sp_validar_movimiento (
     monto             NUMBER;
     fp_valor_minino   NUMBER;
     fp_valor_maximo   NUMBER;
-    forma_pago        NUMBER;
+    forma_pago        VARCHAR(255);
 BEGIN
     IF sw = 1 THEN
         SELECT
@@ -248,7 +248,7 @@ BEGIN
                 UPDATE depositos
                 SET
                     estado = 'RECHAZADA',
-                    observaciones = 'EL MONTOS MAXIMOS Y MINIMOS DE LA FORMA DE PAGO: '||forma_pago||', NO ESTA EN EL RANGO PERMITIDO.'
+                    observaciones = 'EL MONTOS MAXIMOS Y MINIMOS DE LA FORMA DE PAGO: '||forma_pago||', NO ESTA EN EL RANGO PERMITIDO.MIN: '|| fp_valor_minino || ' - MAX: '||fp_valor_maximo ||' - VALOR: '|| monto
                 WHERE
                     id = id_movimiento;
 
@@ -266,4 +266,4 @@ EXCEPTION
         raise_application_error(-20001, 'EL USUARIO NO TIENE MOVIMIENTOS');
 END;
 
-EXEC sp_validar_movimiento(1, 1, 6)
+EXEC sp_validar_movimiento(1, 2, 6)
