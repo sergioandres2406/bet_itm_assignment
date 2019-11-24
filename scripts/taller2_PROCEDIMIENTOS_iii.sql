@@ -28,16 +28,42 @@ CREATE OR REPLACE PROCEDURE Proc_Finaliza_Partido(
         cp_goles_tiempo2  cronograma_partidos.goles_tiempo2%TYPE;
         ta_id_tipos_apuestas tipos_apuestas.id%type;
         ta_tipo_apuesta tipos_apuestas.tipo_apuesta%type;
+        
         da_id_detalle_apuesta detalle_apuesta.id%type;
+        da_id_apuesta detalle_apuesta.id_apuesta%TYPE;
         da_estado detalle_apuesta.estado%TYPE;
-        
-        
+        da_id_tipo_apuesta detalle_apuesta.id_tipo_apuesta%TYPE;
+        da_opcion_equipo1 detalle_apuesta.opcion_equipo1%TYPE;
+        da_opcion_equipo2 detalle_apuesta.opcion_equipo2%TYPE;
+        da_opcion_empate detalle_apuesta.opcion_empate%TYPE;
+        da_opcion_si detalle_apuesta.opcion_si%TYPE;
+        da_opcion_no detalle_apuesta.opcion_no%TYPE;
+        da_opcion_mas detalle_apuesta.opcion_mas%TYPE;
+        da_opcion_menos detalle_apuesta.opcion_menos%TYPE;
+        da_porcentaje_equipo1 detalle_apuesta.porcentaje_equipo1_apostado%TYPE;
+        da_porcentaje_equipo2 detalle_apuesta.porcentaje_equipo2_apostado%TYPE;
+        da_porcentaje_empate detalle_apuesta.porcentaje_empate_apostado%TYPE;
+        da_porcentaje_si detalle_apuesta.porcentaje_si_apostado%TYPE;
+        da_porcentaje_no detalle_apuesta.porcentaje_no_apostado%TYPE;
+        da_porcentaje_mas detalle_apuesta.porcentaje_mas_apostado%TYPE;
+        da_porcentaje_menos detalle_apuesta.porcentaje_menos_apostado%TYPE;
+        da_valor_ganado detalle_apuesta.valor_ganado%TYPE;
+        da_valor_apostado detalle_apuesta.valor_apostado%TYPE;
         
         CURSOR tipo_apuestas_partido is 
         SELECT id,tipo_apuesta   FROM tipos_apuestas where id_cronograma = id_partido;
       
       CURSOR DETALLE_APUESTA_TIPO_APUESTA  IS
-      SELECT ID FROM detalle_apuesta WHERE ID_TIPO_APUESTA = ta_id_tipos_apuestas;
+      SELECT ID,id_apuesta,id_tipo_apuesta,estado,opcion_equipo1,opcion_equipo2,
+            opcion_empate,opcion_si,opcion_no,opcion_mas,opcion_menos,
+            valor_apostado,valor_ganado,porcentaje_equipo1_apostado,
+            porcentaje_equipo2_apostado,porcentaje_empate_apostado,
+            porcentaje_si_apostado,porcentaje_no_apostado,
+            porcentaje_mas_apostado,porcentaje_menos_apostado
+      FROM detalle_apuesta WHERE id_tipo_apuesta = ta_id_tipos_apuestas;
+
+
+
 BEGIN
    cambio_estado := 'FINALIZADO';
    SELECT GANADOR, ID_EQUIPO1,ID_EQUIPO2,ganador_tiempo1,ganador_tiempo2,goles_tiempo1,goles_tiempo2
@@ -56,43 +82,62 @@ BEGIN
    FETCH tipo_apuestas_partido into ta_id_tipos_apuestas,ta_tipo_apuesta; 
        
         if ta_tipo_apuesta = 'SIMPLE' THEN
-        
+        --select * from tipos_apuestas;
+                 OPEN DETALLE_APUESTA_TIPO_APUESTA; 
+                LOOP 
+                FETCH DETALLE_APUESTA_TIPO_APUESTA 
+                --select * from detalle_apuesta;
+                into da_id_detalle_apuesta,da_id_apuesta,da_id_tipo_apuesta,da_estado,da_opcion_equipo1,
+                da_opcion_equipo2,da_opcion_empate,da_opcion_si,da_opcion_no,
+                da_opcion_mas,da_opcion_menos,da_valor_apostado,da_valor_ganado,
+                da_porcentaje_equipo1,da_porcentaje_equipo2,da_porcentaje_empate, 
+                da_porcentaje_si,da_porcentaje_no, da_porcentaje_mas,da_porcentaje_menos; 
+   
+                      if cp_equipo_ganador = cp_id_equipo1 then
+                         if da_opcion_equipo1 = 'Y' then
+                            da_valor_ganado := da_valor_apostado * da_porcentaje_equipo1;
+                         
+                         end if;
+                        dbms_output.put_line('valor ganado  '|| da_valor_ganado); 
+                       
+                    end if;
+                    if cp_equipo_ganador = cp_id_equipo2 then
+                         dbms_output.put_line('ganador equipo2'); 
+                    end if;
+                 EXIT WHEN DETALLE_APUESTA_TIPO_APUESTA%notfound; 
+      
+                 END LOOP; 
+                 CLOSE DETALLE_APUESTA_TIPO_APUESTA; 
+           
+            
         END IF;
         if ta_tipo_apuesta = 'MAS/MENOS(0,5)' THEN
-        
+            dbms_output.put_line('ganador mas menos 0.5');
         END IF;
         if ta_tipo_apuesta = 'MAS/MENOS(1,5)' THEN
-        
+            dbms_output.put_line('ganador mas menos 1.5');
         END IF;
         if ta_tipo_apuesta = 'MAS/MENOS(2,5)' THEN
-        
+            dbms_output.put_line('ganador mas menos 2.5');
         END IF;
         if ta_tipo_apuesta = 'MAS/MENOS(3,5)' THEN
-        
+            dbms_output.put_line('ganador mas menos 3.5');
         END IF;
         if ta_tipo_apuesta = 'AMBOS ANOTAN GOL' THEN
-        
+            dbms_output.put_line('ganador ambos anotan gol');
         END IF;
         
          if ta_tipo_apuesta = 'QUIEN GANA EL PRIMER TIEMPO' THEN
-        
+            dbms_output.put_line('ganador quien gana el primer tiempo');
         END IF;
         if ta_tipo_apuesta = 'QUIEN GANA EL SEGUNDO TIEMPO' THEN
-        
+            dbms_output.put_line('ganador quien gana el segundo tiempo');
         END IF;
          if ta_tipo_apuesta = 'UN GOL EN CADA TIEMPO' THEN
-        
+            dbms_output.put_line('ganador un gol en cada tiempo');
         END IF;
         
-        OPEN DETALLE_APUESTA_TIPO_APUESTA; 
-        LOOP 
-        FETCH DETALLE_APUESTA_TIPO_APUESTA into id_detalle_apuesta; 
    
-   
-         EXIT WHEN DETALLE_APUESTA_TIPO_APUESTA%notfound; 
-      
-         END LOOP; 
-         CLOSE DETALLE_APUESTA_TIPO_APUESTA; 
 
    
       EXIT WHEN tipo_apuestas_partido%notfound; 
@@ -102,42 +147,144 @@ BEGIN
 
    
   
-    select id into id_tipos_apuestas from tipos_apuestas where  id_cronograma = ;
-    exec PROC_FINALIZA_PARTIDO_DET_APUESTAS(
-    
 END;
 
 
-/**  PROCEDIMIENTO QUE ACTUALIZA DETALLE APUESTAS LUEGO QUE UN PARTIDO ES FINALIZADO  */
+/*  vamos a probar el sp */
 
-CREATE OR REPLACE PROCEDURE PROC_FINALIZA_PARTIDO_DET_APUESTAS(
-                            
-                            id_tipo_apuesta NUMBER
-                           ) IS
-   
+/*
+DECLARE
+
+cambio_estado varchar2(255); 
+        cp_id_equipo1  cronograma_partidos.id_equipo1%TYPE;
+        cp_id_equipo2 cronograma_partidos.id_equipo2%TYPE;
+        cp_equipo_ganador cronograma_partidos.ganador%TYPE;
+        cp_goles_equipo1  cronograma_partidos.goles_equipo1%TYPE;
+        cp_goles_equipo2  cronograma_partidos.goles_equipo2%TYPE;
+        cp_ganador_tiempo1 cronograma_partidos.ganador_tiempo1%TYPE;
+        cp_ganador_tiempo2 cronograma_partidos.ganador_tiempo2%TYPE;
+        cp_goles_tiempo1  cronograma_partidos.goles_tiempo1%TYPE;
+        cp_goles_tiempo2  cronograma_partidos.goles_tiempo2%TYPE;
+        ta_id_tipos_apuestas tipos_apuestas.id%type;
+        ta_tipo_apuesta tipos_apuestas.tipo_apuesta%type;
+        
+        da_id_detalle_apuesta detalle_apuesta.id%type;
+        da_id_apuesta detalle_apuesta.id_apuesta%TYPE;
+        da_estado detalle_apuesta.estado%TYPE;
+        da_id_tipo_apuesta detalle_apuesta.id_tipo_apuesta%TYPE;
+        da_opcion_equipo1 detalle_apuesta.opcion_equipo1%TYPE;
+        da_opcion_equipo2 detalle_apuesta.opcion_equipo2%TYPE;
+        da_opcion_empate detalle_apuesta.opcion_empate%TYPE;
+        da_opcion_si detalle_apuesta.opcion_si%TYPE;
+        da_opcion_no detalle_apuesta.opcion_no%TYPE;
+        da_opcion_mas detalle_apuesta.opcion_mas%TYPE;
+        da_opcion_menos detalle_apuesta.opcion_menos%TYPE;
+        da_porcentaje_equipo1 detalle_apuesta.porcentaje_equipo1_apostado%TYPE;
+        da_porcentaje_equipo2 detalle_apuesta.porcentaje_equipo2_apostado%TYPE;
+        da_porcentaje_empate detalle_apuesta.porcentaje_empate_apostado%TYPE;
+        da_porcentaje_si detalle_apuesta.porcentaje_si_apostado%TYPE;
+        da_porcentaje_no detalle_apuesta.porcentaje_no_apostado%TYPE;
+        da_porcentaje_mas detalle_apuesta.porcentaje_mas_apostado%TYPE;
+        da_porcentaje_menos detalle_apuesta.porcentaje_menos_apostado%TYPE;
+        da_valor_ganado detalle_apuesta.valor_ganado%TYPE;
+        da_valor_apostado detalle_apuesta.valor_apostado%TYPE;
+        
+        CURSOR tipo_apuestas_partido is 
+        SELECT id,tipo_apuesta   FROM tipos_apuestas where id_cronograma = 2;
+      
+      CURSOR DETALLE_APUESTA_TIPO_APUESTA  IS
+      SELECT ID,id_apuesta,id_tipo_apuesta,estado,opcion_equipo1,opcion_equipo2,
+            opcion_empate,opcion_si,opcion_no,opcion_mas,opcion_menos,
+            valor_apostado,valor_ganado,porcentaje_equipo1_apostado,
+            porcentaje_equipo2_apostado,porcentaje_empate_apostado,
+            porcentaje_si_apostado,porcentaje_no_apostado,
+            porcentaje_mas_apostado,porcentaje_menos_apostado
+      FROM detalle_apuesta WHERE id_tipo_apuesta = ta_id_tipos_apuestas;
+
+
+
 BEGIN
-  
-  select cp.id_equipo1 equipo1, cp.id_equipo2 equipo2,cp.ganador,
-         cp.goles_equipo1,cp.goles_equipo2,cp.ganador_tiempo1,cp.ganador_tiempo2,cp.estado
-        ta.
-
-SELECT da.id_apuesta ID_Apuesta,da.id_tipo_apuesta ID_Tipo_apuesta, cp.estado Estado_Partido,
-CASE WHEN da.porcentaje_equipo1_apostado is NOT null then da.porcentaje_equipo1_apostado
-WHEN da.porcentaje_equipo2_apostado is NOT null then da.porcentaje_equipo2_apostado
-WHEN da.porcentaje_empate_apostado is NOT null then da.porcentaje_empate_apostado
-WHEN da.porcentaje_si_apostado  is NOT null then da.porcentaje_si_apostado
-WHEN da.porcentaje_no_apostado  is NOT null then da.porcentaje_no_apostado
-WHEN da.porcentaje_mas_apostado  is not null then da.porcentaje_mas_apostado
-WHEN da.porcentaje_menos_apostado  is not null then da.porcentaje_menos_apostado end PORCENTAJE,
-NVL(cp.goles_equipo1,'0')||':'||NVL(cp.goles_equipo2,'0') MARCADOR,
-CASE WHEN da.valor_ganado=0 then 'PERDIO' WHEN da.valor_ganado is null then 'PENDIENTE' ELSE 'GANADA' END ESTADO,da.valor_apostado VALOR_APOSTADO
-FROM detalle_apuesta da inner join tipos_apuestas ta on 
-da.id_tipo_apuesta=ta.id inner join cronograma_partidos cp on ta.id_cronograma=cp.id
-inner join equipos e1 on cp.id_equipo1=e1.id
-inner join equipos e2 on cp.id_equipo2=e2.id;
-
-
-
+   cambio_estado := 'FINALIZADO';
+   SELECT GANADOR, ID_EQUIPO1,ID_EQUIPO2,ganador_tiempo1,ganador_tiempo2,goles_tiempo1,goles_tiempo2
+   INTO 
+   cp_equipo_ganador ,cp_id_equipo1,cp_id_equipo2,cp_ganador_tiempo1,cp_ganador_tiempo2,cp_goles_tiempo1,cp_goles_tiempo2
+   FROM cronograma_partidos WHERE ID = 2; 
+   
+   
+   
+   --update cronograma_partidos set  estado = cambio_estado where id = id_partido;    
+   --update tipos_apuestas set estado = cambio_estado where id_crongrama = id_partido; 
     
-END;
+   
+    OPEN tipo_apuestas_partido; 
+   LOOP 
+   FETCH tipo_apuestas_partido into ta_id_tipos_apuestas,ta_tipo_apuesta; 
+       
+        if ta_tipo_apuesta = 'SIMPLE' THEN
+        --select * from tipos_apuestas;
+                 OPEN DETALLE_APUESTA_TIPO_APUESTA; 
+                LOOP 
+                FETCH DETALLE_APUESTA_TIPO_APUESTA 
+                --select * from detalle_apuesta;
+                into da_id_detalle_apuesta,da_id_apuesta,da_id_tipo_apuesta,da_estado,da_opcion_equipo1,
+                da_opcion_equipo2,da_opcion_empate,da_opcion_si,da_opcion_no,
+                da_opcion_mas,da_opcion_menos,da_valor_apostado,da_valor_ganado,
+                da_porcentaje_equipo1,da_porcentaje_equipo2,da_porcentaje_empate, 
+                da_porcentaje_si,da_porcentaje_no, da_porcentaje_mas,da_porcentaje_menos; 
+   
+                      if cp_equipo_ganador = cp_id_equipo1 then
+                         if da_opcion_equipo1 = 'Y' then
+                            da_valor_ganado := da_valor_apostado * da_porcentaje_equipo1;
+                         
+                         end if;
+                        dbms_output.put_line('valor ganado  '|| da_valor_ganado); 
+                         dbms_output.put_line('GANADOR_EQUIPO1 GONORREA  '); 
+                    end if;
+                    if cp_equipo_ganador = cp_id_equipo2 then
+                         dbms_output.put_line('ganador equipo2'); 
+                    end if;
+                 EXIT WHEN DETALLE_APUESTA_TIPO_APUESTA%notfound; 
+      
+                 END LOOP; 
+                 CLOSE DETALLE_APUESTA_TIPO_APUESTA; 
+           
+            
+        END IF;
+        if ta_tipo_apuesta = 'MAS/MENOS(0,5)' THEN
+            dbms_output.put_line('ganador mas menos 0.5');
+        END IF;
+        if ta_tipo_apuesta = 'MAS/MENOS(1,5)' THEN
+            dbms_output.put_line('ganador mas menos 1.5');
+        END IF;
+        if ta_tipo_apuesta = 'MAS/MENOS(2,5)' THEN
+            dbms_output.put_line('ganador mas menos 2.5');
+        END IF;
+        if ta_tipo_apuesta = 'MAS/MENOS(3,5)' THEN
+            dbms_output.put_line('ganador mas menos 3.5');
+        END IF;
+        if ta_tipo_apuesta = 'AMBOS ANOTAN GOL' THEN
+            dbms_output.put_line('ganador ambos anotan gol');
+        END IF;
+        
+         if ta_tipo_apuesta = 'QUIEN GANA EL PRIMER TIEMPO' THEN
+            dbms_output.put_line('ganador quien gana el primer tiempo');
+        END IF;
+        if ta_tipo_apuesta = 'QUIEN GANA EL SEGUNDO TIEMPO' THEN
+            dbms_output.put_line('ganador quien gana el segundo tiempo');
+        END IF;
+         if ta_tipo_apuesta = 'UN GOL EN CADA TIEMPO' THEN
+            dbms_output.put_line('ganador un gol en cada tiempo');
+        END IF;
+        
+   
 
+   
+      EXIT WHEN tipo_apuestas_partido%notfound; 
+      
+   END LOOP; 
+   CLOSE tipo_apuestas_partido; 
+
+   --SELECT * FROM CRONOGRAMA_PARTIDOS;
+
+END;
+*/
