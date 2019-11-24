@@ -128,8 +128,11 @@ CREATE OR REPLACE PROCEDURE sp_validar_movimiento (
     sw              NUMBER,
     id_movimiento   NUMBER
 ) IS
-    estado   NUMBER;
-    monto    NUMBER;
+    estado            NUMBER;
+    monto             NUMBER;
+    fp_valor_minino   NUMBER;
+    fp_valor_maximo   NUMBER;
+    forma_pago        NUMBER;
 BEGIN
     IF sw = 1 THEN
         SELECT
@@ -140,18 +143,28 @@ BEGIN
         WHERE
             id_usuario = id_usuario
             AND id = id_movimiento
-            AND registro_activo = 'Y' AND ESTADO='PENDIENTE';
+            AND registro_activo = 'Y'
+            AND estado = 'PENDIENTE';
 
     ELSE
         SELECT
-            valor
-        INTO monto
+            d.valor,
+            mp.valor_minimo,
+            mp.valor_maximo,
+            mp.nombre
+        INTO
+            monto,
+            fp_valor_minimo,
+            fp_valor_maximo,
+            forma_pago
         FROM
-            depositos
+            depositos    d
+            INNER JOIN medio_pago   mp ON d.id_medio_pago = mp.id
         WHERE
-            id_usuario = id_usuario
-            AND id = id_movimiento
-            AND registro_activo = 'Y' AND ESTADO='PENDIENTE';
+            d.id_usuario = id_usuario
+            AND d.id = id_movimiento
+            AND d.registro_activo = 'Y'
+            AND d.estado = 'PENDIENTE';
 
     END IF;
 
@@ -220,6 +233,14 @@ BEGIN
                 WHERE
                     id = id_movimiento;
 
+            WHEN monto <fp_valor_minimo or monto>fp_valor_maximo  THEN
+                UPDATE depositos
+                SET
+                    estado = 'RECHAZADA',
+                    observaciones = 'EL MONTOS MAXIMOS Y MINIMOS DE LA FORMA DE PAGO: '|forma_pago|', NO ESTA EN EL RANGO PERMITIDO.'
+                WHERE
+                    id = id_movimiento;
+
             WHEN estado = 0 THEN
                 UPDATE depositos
                 SET
@@ -234,6 +255,4 @@ EXCEPTION
         raise_application_error(-20001, 'EL USUARIO NO TIENE MOVIMIENTOS');
 END;
 
-
-EXEC sp_validar_movimiento (1,1,3)
-
+EXEC sp_validar_movimiento(1, 1, 3)
