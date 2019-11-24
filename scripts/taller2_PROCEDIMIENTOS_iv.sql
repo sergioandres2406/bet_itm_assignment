@@ -82,6 +82,12 @@ SELECT
     f_validar_movimiento(4545, 200, 1)
 FROM
     dual;
+    
+    
+--- =============================================================================================================
+--- =============================================================================================================
+--- =============================================================================================================
+
 
 CREATE OR REPLACE PROCEDURE sp_crear_movimiento (
     id_usuario   NUMBER,
@@ -123,6 +129,11 @@ END;
 
 EXEC sp_crear_movimiento(1, 20000, 2, 1);
 
+--- =============================================================================================================
+--- =============================================================================================================
+--- =============================================================================================================
+
+
 CREATE OR REPLACE PROCEDURE sp_validar_movimiento (
     id_usuario      NUMBER,
     sw              NUMBER,
@@ -154,7 +165,7 @@ BEGIN
             mp.nombre
         INTO
             monto,
-            fp_valor_minimo,
+            fp_valor_minino,
             fp_valor_maximo,
             forma_pago
         FROM
@@ -233,11 +244,11 @@ BEGIN
                 WHERE
                     id = id_movimiento;
 
-            WHEN monto <fp_valor_minimo or monto>fp_valor_maximo  THEN
+            WHEN monto <fp_valor_minino or monto>fp_valor_maximo  THEN
                 UPDATE depositos
                 SET
                     estado = 'RECHAZADA',
-                    observaciones = 'EL MONTOS MAXIMOS Y MINIMOS DE LA FORMA DE PAGO: '|forma_pago|', NO ESTA EN EL RANGO PERMITIDO.'
+                    observaciones = 'EL MONTOS MAXIMOS Y MINIMOS DE LA FORMA DE PAGO: '||forma_pago||', NO ESTA EN EL RANGO PERMITIDO.'
                 WHERE
                     id = id_movimiento;
 
