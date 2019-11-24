@@ -266,20 +266,18 @@ insert into limites_bloqueos (id_usuario, montodiario, montosemanal, montomensua
 
 
 --prueba en apuestas
-
 insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('17/11/2019 3:00:00 PM', 1, 'Y');
 insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('17/11/2019 3:00:00 PM', 2, 'Y');
 insert into apuestas (fecha_apuesta, id_usuario, registro_activo) values ('16/11/2019 5:00:00 PM', 3, 'Y');
+--SELECT * FROM APUESTAS;
 
-
-
+--select * from cronograma_partidos;
 --CRONOGRAMA_PARTIDOS--
-insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, ganador, goles_equipo1, goles_equipo2, ganador_tiempo1, ganador_tiempo2, estado, registro_activo) 
-values ('17/11/2019 03:00:00 PM', 4, 2, 2, 1, 2, 4, 2, 'FINALIZADO', 'Y');
+insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, ganador, goles_equipo1, goles_equipo2, ganador_tiempo1, ganador_tiempo2,goles_tiempo1,goles_tiempo2, estado, registro_activo) 
+values ('17/11/2019 03:00:00 PM', 4, 2, 2, 1, 2, 4, 2,1,2, 'FINALIZADO', 'Y');
 
-insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, estado, registro_activo) 
-values ('25/11/2019 03:00:00 PM', 1, 2,  'PENDIENTE', 'Y');
-
+insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, ganador, goles_equipo1, goles_equipo2, ganador_tiempo1, ganador_tiempo2,goles_tiempo1,goles_tiempo2, estado, registro_activo) 
+values ('25/11/2019 03:00:00 PM', 1, 2, 1,3,1,2,1,1,3, 'PENDIENTE', 'Y');
 
 insert into cronograma_partidos (fecha, id_equipo1, id_equipo2, estado, registro_activo) 
 values ('25/11/2019 05:00:00 PM', 6, 7,  'PENDIENTE', 'Y');
@@ -354,8 +352,15 @@ values
 (1,1,'GANADA','Y',30000,150000,5,'Y');
 
 
+insert into detalle_apuesta
+(id_apuesta,id_tipo_apuesta,estado,opcion_equipo1,valor_apostado,porcentaje_equipo1_apostado,registro_activo)
+values
+(2,2,'VENDIDA','Y',15000,2,'Y');
+
+
 
 update apuestas set total = 30000,total_ganado =1500000 where id =1;
+update apuestas set total = 15000 where id =2;
 
 
 
