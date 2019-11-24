@@ -34,7 +34,8 @@ id NUMBER(22,0) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 ip varchar2(255) not null,
 id_usuario NUMBER(22,0) not null,
 fecha_inicio_sesion TIMESTAMP DEFAULT SYSDATE NOT NULL,
-estado varchar2(255) not null,
+fecha_fin_sesion TIMESTAMP NOT NULL,
+estado varchar2(255) null,
 registro_activo varchar2(255) NOT NULL
 )TABLESPACE BET_ITM;
 
