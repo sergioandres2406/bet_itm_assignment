@@ -697,7 +697,7 @@ BEGIN
             end if;
             if estado =  'GANADA' then
                 ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
-                update apuestas set total_ganado = ganancia_total_nueva;            
+                update apuestas set total_ganado = ganancia_total_nueva where id = det_id_apuesta;           
             end if;
         END IF;
         IF saldo_actual_usuario < det_valor_apostado then
@@ -713,7 +713,7 @@ BEGIN
          end if;
          if estado =  'REEMBOLSADA' then
                 apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
-                update apuestas set total = apuesta_total_nueva;            
+                update apuestas set total = apuesta_total_nueva   where  id= det_id_detalle_apuesta;         
          end if;
     END IF;      
 END; 
