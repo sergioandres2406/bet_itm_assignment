@@ -95,6 +95,7 @@ BEGIN
                       if cp_equipo_ganador = cp_id_equipo1 then
                          if da_opcion_equipo1 = 'Y' then
                             da_valor_ganado := da_valor_apostado * da_porcentaje_equipo1;
+                            dbms_output.put_line('ID_TIPO_APUESTA '|| DA_ID_TIPO_APUESTA); 
                             dbms_output.put_line('valor ganado PARTIDO EQUIPO1 '|| da_valor_ganado); 
                          END IF;
                       ELSE                                                    
@@ -114,19 +115,21 @@ BEGIN
                  END LOOP; 
                  CLOSE DETALLE_APUESTA_TIPO_APUESTA; 
            
-            
+        ELSE
+             if ta_tipo_apuesta = 'MAS/MENOS(0,5)' THEN
+                dbms_output.put_line('ganador mas menos 0.5');
+             ELSE
+                
+                IF ta_tipo_apuesta = 'MAS/MENOS(1,5)' THEN
+                dbms_output.put_line('ganador mas menos 1.5');
+                END IF;
+            END IF;
         END IF;
-        if ta_tipo_apuesta = 'MAS/MENOS(0,5)' THEN
-            dbms_output.put_line('ganador mas menos 0.5');
-        END IF;
-        if ta_tipo_apuesta = 'MAS/MENOS(1,5)' THEN
-            dbms_output.put_line('ganador mas menos 1.5');
-        END IF;
+        
+        
+       
         if ta_tipo_apuesta = 'MAS/MENOS(2,5)' THEN
             dbms_output.put_line('ganador mas menos 2.5');
-        END IF;
-        if ta_tipo_apuesta = 'MAS/MENOS(3,5)' THEN
-            dbms_output.put_line('ganador mas menos 3.5');
         END IF;
         if ta_tipo_apuesta = 'AMBOS ANOTAN GOL' THEN
             dbms_output.put_line('ganador ambos anotan gol');
