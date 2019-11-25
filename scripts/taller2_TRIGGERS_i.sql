@@ -647,7 +647,7 @@ BEGIN
     END IF;
    
    	IF UPDATING THEN 
-		 if valor_apostado > 0 or valor_ganado >0 then
+		 if  valor_ganado >0 then
         saldo_nuevo := saldo_actual - valor_apostado;
         saldo_nuevo := saldo_actual + valor_ganado;
         update usuarios set saldo = saldo_nuevo where id=usuario;
@@ -668,6 +668,7 @@ FOR EACH ROW
 
 DECLARE 
    det_id_detalle_apuesta number;
+   
    det_id_apuesta number;
    total_apuesta_actual number;
    total_ganado_actual number;
@@ -678,7 +679,8 @@ DECLARE
    saldo_actual_usuario number;
    usuario number;
    estado varchar2(255);
-   
+   --SELECT * FROM DETALLE_APUESTA;
+   --SELECT * FROM APUESTAS WHERE ID = 2;
 BEGIN    
     det_id_detalle_apuesta := :NEW.id;
     det_id_apuesta := :NEW.id_apuesta;
@@ -688,6 +690,7 @@ BEGIN
     det_valor_apostado := NVL(:NEW.valor_apostado,'0'); 
     select id_usuario into usuario from apuestas where  id = det_id_apuesta;
     select saldo into saldo_actual_usuario from usuarios where  id = usuario;
+    
      
      IF INSERTING THEN 
         IF saldo_actual_usuario >= det_valor_apostado then
@@ -704,12 +707,11 @@ BEGIN
             UPDATE DETALLE_APUESTA SET ESTADO = 'RECHAZADA' where  id= det_id_detalle_apuesta;
         END IF;
     END IF;
-   
-   
+      
    	IF UPDATING THEN 
 		 if estado =  'GANADA' then
                 ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
-                update apuestas set total_ganado = ganancia_total_nueva;            
+                update apuestas set total_ganado = ganancia_total_nueva WHERE ID =det_id_apuesta;            
          end if;
          if estado =  'REEMBOLSADA' then
                 apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
