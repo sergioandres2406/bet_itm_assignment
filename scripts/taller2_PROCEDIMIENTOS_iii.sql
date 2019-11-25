@@ -28,6 +28,7 @@ CREATE OR REPLACE PROCEDURE Proc_Finaliza_Partido(
         cp_goles_tiempo2  cronograma_partidos.goles_tiempo2%TYPE;
         ta_id_tipos_apuestas tipos_apuestas.id%type;
         ta_tipo_apuesta tipos_apuestas.tipo_apuesta%type;
+        ta_id_cronograma tipos_apuestas.id_cronograma%TYPE;
         da_id_detalle_apuesta detalle_apuesta.id%type;
         da_id_apuesta detalle_apuesta.id_apuesta%TYPE;
         da_estado detalle_apuesta.estado%TYPE;
@@ -48,10 +49,11 @@ CREATE OR REPLACE PROCEDURE Proc_Finaliza_Partido(
         da_porcentaje_menos detalle_apuesta.porcentaje_menos_apostado%TYPE;
         da_valor_ganado detalle_apuesta.valor_ganado%TYPE;
         da_valor_apostado detalle_apuesta.valor_apostado%TYPE;
+        ap_total_ganado apuestas.total_ganado%TYPE;
         
         CURSOR tipo_apuestas_partido is 
-        SELECT id,tipo_apuesta   FROM tipos_apuestas where id_cronograma = id_partido;
-      
+        SELECT id,tipo_apuesta,id_cronograma   FROM tipos_apuestas where id_cronograma = id_partido;
+       --SELECT id,tipo_apuesta,ID_CRONOGRAMA   FROM tipos_apuestas where id_cronograma = 2;
       CURSOR DETALLE_APUESTA_TIPO_APUESTA  IS
       SELECT ID,id_apuesta,id_tipo_apuesta,estado,opcion_equipo1,opcion_equipo2,
             opcion_empate,opcion_si,opcion_no,opcion_mas,opcion_menos,
@@ -60,7 +62,6 @@ CREATE OR REPLACE PROCEDURE Proc_Finaliza_Partido(
             porcentaje_si_apostado,porcentaje_no_apostado,
             porcentaje_mas_apostado,porcentaje_menos_apostado
       FROM detalle_apuesta WHERE id_tipo_apuesta = ta_id_tipos_apuestas;
-
 
 
 BEGIN
@@ -72,16 +73,16 @@ BEGIN
    
    
    
-   --update cronograma_partidos set  estado = cambio_estado where id = id_partido;    
-   --update tipos_apuestas set estado = cambio_estado where id_crongrama = id_partido; 
+   update cronograma_partidos set  estado = cambio_estado where id = id_partido;    
+   update tipos_apuestas set estado = cambio_estado where id_cronograma = id_partido; 
     
    
     OPEN tipo_apuestas_partido; 
    LOOP 
-   FETCH tipo_apuestas_partido into ta_id_tipos_apuestas,ta_tipo_apuesta; 
+   FETCH tipo_apuestas_partido into ta_id_tipos_apuestas,ta_tipo_apuesta,ta_id_cronograma; 
        
-        if ta_tipo_apuesta = 'SIMPLE' THEN
-        --select * from tipos_apuestas;
+        if ta_tipo_apuesta = 'SIMPLE' AND ta_id_cronograma = id_partido  THEN
+        --select * from tipos_apuestas where  tipo_apuesta = 'SIMPLE' AND  ID_CRONOGRAMA = 2;
                  OPEN DETALLE_APUESTA_TIPO_APUESTA; 
                 LOOP 
                 FETCH DETALLE_APUESTA_TIPO_APUESTA 
@@ -91,18 +92,34 @@ BEGIN
                 da_opcion_mas,da_opcion_menos,da_valor_apostado,da_valor_ganado,
                 da_porcentaje_equipo1,da_porcentaje_equipo2,da_porcentaje_empate, 
                 da_porcentaje_si,da_porcentaje_no, da_porcentaje_mas,da_porcentaje_menos; 
-   
+                 select NVL(total_ganado,'0') into ap_total_ganado from apuestas where id = da_id_apuesta;
+   --select * from tipos_apuestas;
+   --select * from detalle_apuesta;
                       if cp_equipo_ganador = cp_id_equipo1 then
+                          select NVL(total_ganado,'0') into ap_total_ganado from apuestas where id = da_id_apuesta;
+                            
                          if da_opcion_equipo1 = 'Y' then
                             da_valor_ganado := da_valor_apostado * da_porcentaje_equipo1;
-                            dbms_output.put_line('ID_TIPO_APUESTA '|| DA_ID_TIPO_APUESTA); 
-                            dbms_output.put_line('valor ganado PARTIDO EQUIPO1 '|| da_valor_ganado); 
+                             update apuestas set total_ganado = ap_total_ganado + da_valor_ganado;
+                            UPDATE detalle_apuesta SET estado = 'GANADA', valor_apostado = da_valor_apostado,valor_ganado = da_valor_ganado  WHERE id = da_id_detalle_apuesta; 
+                            dbms_output.put_line('id_tipo_apuesta '|| ta_id_tipos_apuestas);
+                            dbms_output.put_line('PARTIDO ganado  EQUIPO1 APUESTA SIMPLE VALOR GANADO '|| da_valor_ganado); 
+                            dbms_output.put_line('total_ganado en  ap_total_ganado '|| ap_total_ganado);
+                         else
+                            da_valor_ganado := 0;
+                             UPDATE detalle_apuesta SET estado = 'PERDIDA', valor_apostado = da_valor_apostado,valor_ganado = da_valor_ganado  WHERE id = da_id_detalle_apuesta;
+                             dbms_output.put_line('PARTIDO PERDIDO  EQUIPO1 APUESTA SIMPLE  VALOR GANADO'|| da_valor_ganado); 
                          END IF;
                       ELSE                                                    
                             if cp_equipo_ganador = cp_id_equipo2 then
                                 if da_opcion_equipo2 = 'Y' then
                                     da_valor_ganado := da_valor_apostado * da_porcentaje_equipo2;
+                                    UPDATE detalle_apuesta SET estado = 'GANADA', valor_apostado = da_valor_apostado,valor_ganado = da_valor_ganado  WHERE id = da_id_detalle_apuesta; 
                                     dbms_output.put_line('valor ganado PARTIDO EQUIPO2  '|| da_valor_ganado);
+                                 else
+                                    da_valor_ganado := 0;
+                                    UPDATE detalle_apuesta SET estado = 'PERDIDA', valor_apostado = da_valor_apostado,valor_ganado = da_valor_ganado  WHERE id = da_id_detalle_apuesta;
+                                    dbms_output.put_line('PARTIDO PERDIDO  EQUIPO1 APUESTA SIMPLE  VALOR GANADO'|| da_valor_ganado);
                                 end if;
                             end if;
                        end if;
@@ -118,6 +135,7 @@ BEGIN
         ELSE
              if ta_tipo_apuesta = 'MAS/MENOS(0,5)' THEN
                 dbms_output.put_line('ganador mas menos 0.5');
+                dbms_output.put_line('TIPO DE APUESTA '|| ta_tipo_apuesta); 
              ELSE
                 
                 IF ta_tipo_apuesta = 'MAS/MENOS(1,5)' THEN
@@ -159,3 +177,10 @@ END;
 
 
 --EXECUTE Proc_Finaliza_Partido(2);
+
+
+--SELECT SALDO FROM USUARIOS WHERE ID = 2;
+--SELECT * FROM APUESTAS WHERE ID_USUARIO = 2;
+--SELECT * FROM DETALLE_APUESTA WHERE ESTADO = 'GANADA'
+--SELECT ESTADO FROM TIPOS_APUESTAS  WHERE ID_CRONOGRAMA = 2;
+--SELECT ESTADO FROM CRONOGRAMA_PARTIDOS  WHERE ID = 2;
