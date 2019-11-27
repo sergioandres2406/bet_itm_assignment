@@ -80,12 +80,14 @@ BEGIN
     OPEN tipo_apuestas_partido; 
    LOOP 
    FETCH tipo_apuestas_partido into ta_id_tipos_apuestas,ta_tipo_apuesta,ta_id_cronograma; 
+   EXIT WHEN tipo_apuestas_partido%notfound; 
        
         if ta_tipo_apuesta = 'SIMPLE' AND ta_id_cronograma = id_partido  THEN
         --select * from tipos_apuestas where  tipo_apuesta = 'SIMPLE' AND  ID_CRONOGRAMA = 2;
                  OPEN DETALLE_APUESTA_TIPO_APUESTA; 
                 LOOP 
                 FETCH DETALLE_APUESTA_TIPO_APUESTA 
+                
                 --select * from detalle_apuesta;
                 into da_id_detalle_apuesta,da_id_apuesta,da_id_tipo_apuesta,da_estado,da_opcion_equipo1,
                 da_opcion_equipo2,da_opcion_empate,da_opcion_si,da_opcion_no,
@@ -93,6 +95,8 @@ BEGIN
                 da_porcentaje_equipo1,da_porcentaje_equipo2,da_porcentaje_empate, 
                 da_porcentaje_si,da_porcentaje_no, da_porcentaje_mas,da_porcentaje_menos; 
                  select NVL(total_ganado,'0') into ap_total_ganado from apuestas where id = da_id_apuesta;
+                
+                 EXIT WHEN DETALLE_APUESTA_TIPO_APUESTA%notfound; 
    --select * from tipos_apuestas;
    --select * from detalle_apuesta;
                       if cp_equipo_ganador = cp_id_equipo1 then
@@ -127,7 +131,7 @@ BEGIN
                        
                         
                     
-                 EXIT WHEN DETALLE_APUESTA_TIPO_APUESTA%notfound; 
+                 
       
                  END LOOP; 
                  CLOSE DETALLE_APUESTA_TIPO_APUESTA; 
@@ -166,7 +170,7 @@ BEGIN
    
 
    
-      EXIT WHEN tipo_apuestas_partido%notfound; 
+      
       
    END LOOP; 
    CLOSE tipo_apuestas_partido; 
