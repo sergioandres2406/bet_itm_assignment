@@ -206,7 +206,13 @@ END;
 CREATE OR REPLACE VIEW V_SESIONES_ACTIVAS
 AS
 
-SELECT * FROM USUARIOS U LEFT JOIN sesiones S ON S.
+SELECT u.id id_usuario,f_diferencia_horas(sysdate,s.FECHA_INICIO_SESION) horas_transcurridas,lb.TIEMPO_CERRAR_SESION HORAS_CERRAR_SESSION ,lb.TIEMPO_CERRAR_SESION-f_diferencia_horas(sysdate,s.FECHA_INICIO_SESION)
+DIFERENCIA_HORAS
+FROM USUARIOS U inner JOIN sesiones S ON u.id=s.id_usuario
+inner join limites_bloqueos lb on u.id=lb.id_usuario
+where s.fecha_fin_sesion is null AND s.registro_activo='Y' order by  s.FECHA_INICIO_SESION,f_diferencia_horas(sysdate,s.FECHA_INICIO_SESION)desc
+;
+
 
 
 
