@@ -722,3 +722,53 @@ END;
 
 
 
+/*
+iii
+Crear un trigger asociado a la tabla PARTIDOS, este trigger se disparará solamente cuando el partido pase a estado "FINALIZADO". 
+El propósito de este trigger es ejecutar el o los procedimientos hechos para liquidar las ganancias y pérdidas de los usuarios 
+que apostaron a ese partido.
+
+*/
+
+CREATE OR REPLACE TRIGGER liquida_ganancias_y_perdidas
+AFTER INSERT or update OF ESTADO ON cronograma_partidos
+
+FOR EACH ROW
+
+WHEN (NEW.ESTADO = 'FINALIZADO')
+DECLARE
+ID_PARTIDO NUMBER;
+CP_ESTADO VARCHAR2(255);
+cp_id_equipo2 number;
+cp_id_equipo1 number;
+cp_equipo_ganador number;
+cp_goles_equipo1 number;
+cp_goles_equipo2 number;
+cp_ganador_tiempo1 number;
+cp_ganador_tiempo2 number;
+cp_goles_tiempo1 number;
+cp_goles_tiempo2 number;
+
+BEGIN
+id_partido := :NEW.ID;
+cp_estado := :NEW.ESTADO;
+cp_id_equipo1 := :NEW.id_equipo1;
+cp_id_equipo2 := :NEW.id_equipo2;
+cp_equipo_ganador :=  :NEW.ganador;
+cp_goles_equipo1 := :NEW.goles_equipo1;
+cp_goles_equipo2 := :NEW.goles_equipo2;
+cp_ganador_tiempo1 := :NEW.ganador_tiempo1;
+cp_ganador_tiempo2 := :NEW.ganador_tiempo2;    
+cp_goles_tiempo1 := :NEW.goles_tiempo1;
+cp_goles_tiempo2 := :NEW.goles_tiempo2;
+
+    
+PROC_FINALIZA_PARTIDO_CALCULOS(id_partido, cp_id_equipo1,cp_id_equipo2,
+    cp_equipo_ganador, cp_goles_equipo1,
+    cp_goles_equipo2,cp_ganador_tiempo1, cp_ganador_tiempo2,
+    cp_goles_tiempo1,cp_goles_tiempo2,cp_estado);
+   
+   
+
+   
+END;
