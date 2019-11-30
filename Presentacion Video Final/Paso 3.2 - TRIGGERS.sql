@@ -1,5 +1,5 @@
 /*AUIDOTORIA APUESTAS*/
-
+--select * from auditoria;
 CREATE OR REPLACE TRIGGER TG_AUDITORIA_APUESTAS
 AFTER INSERT OR UPDATE OR DELETE ON APUESTAS
 FOR EACH ROW
@@ -26,6 +26,11 @@ BEGIN
 
 END;
 /
+
+
+
+
+
 
 /*AUIDOTORIA BONOS*/
 
@@ -55,6 +60,10 @@ BEGIN
 END;
 /
 
+--insert into BONOS (codigo, valor, registro_activo) values ('XrJ5y', 15000, 'Y');
+--select * from auditoria;
+
+
 /*AUIDOTORIA BANCOS*/
 
 CREATE OR REPLACE TRIGGER TG_AUDITORIA_BANCOS
@@ -82,7 +91,7 @@ BEGIN
    
 END;
 
-/
+
 /*AUIDOTORIA CIUDADES*/
 
 CREATE OR REPLACE TRIGGER TG_AUDITORIA_CIUDADES

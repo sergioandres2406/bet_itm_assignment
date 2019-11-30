@@ -79,7 +79,7 @@ EXCEPTION
 END;
 
 SELECT
-    f_validar_movimiento(4545, 200, 1)
+    f_validar_movimiento(1, 200, 1)
 FROM
     dual;
     

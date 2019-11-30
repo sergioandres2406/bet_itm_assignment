@@ -19,9 +19,9 @@ declare
 SESSION_VALIDA VARCHAR(100);
 
 BEGIN
-SESSION_VALIDA := case F_Validar_Session(1251) when true then 'true' when false then 'false' else NULL end;
+SESSION_VALIDA := case F_Validar_Session(1) when true then 'true' when false then 'false' else NULL end;
 
  DBMS_OUTPUT.PUT_LINE(SESSION_VALIDA);
 
 END;
-
+--select * from sesiones;

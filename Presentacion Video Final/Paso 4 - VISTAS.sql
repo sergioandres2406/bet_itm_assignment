@@ -46,10 +46,12 @@ CREATE OR REPLACE VIEW v_ganadores_semanales AS
 
 /*CONSULTA==============================================
 
-SELECT
-    *
-FROM
-    ganadores_semanales;
+--select * from apuestas;
+
+SELECT * FROM    ganadores_semanales;
+ 
+ update apuestas set fecha_apuesta = '29/11/2019 03:00:00 pm' where id = 1;
+
 
 *===========================================================/
 /
@@ -111,7 +113,7 @@ CREATE OR REPLACE VIEW v_detalles_apuestas AS
         INNER JOIN equipos               e1 ON cp.id_equipo1 = e1.id
         INNER JOIN equipos               e2 ON cp.id_equipo2 = e2.id;
 
-
+--select * from v_detalles_apuestas;
 
 /*
 VISTA 3 
@@ -151,7 +153,7 @@ CREATE OR REPLACE VIEW v_resumen_apuestas AS
     GROUP BY
         id_apuesta;
 
-
+--select * from v_resumen_apuestas;
 /*
 VISTA 4 
 Para la siguiente vista deberán alterar el manejo de sesiones de usuario, el sistema deberá guardar el timestamp de la hora de sesión y el timestamp del 
@@ -194,7 +196,7 @@ where s.fecha_fin_sesion is null AND s.registro_activo='Y' order by  s.FECHA_INI
 ;
 
 
-
+--select * from v_sesiones_activas;
 
 
 

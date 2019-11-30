@@ -9,3 +9,5 @@ select id_sesion from V_SESIONES_ACTIVAS where diferencia_horas<0
 
 END;
 exec sp_cerrar_sesion;
+
+--select * from  sesiones;
