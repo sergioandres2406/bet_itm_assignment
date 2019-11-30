@@ -1,0 +1,774 @@
+/*AUIDOTORIA APUESTAS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_APUESTAS
+AFTER INSERT OR UPDATE OR DELETE ON APUESTAS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,REGISTRO_ACTIVO) VALUES (
+   'APUESTAS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,REGISTRO_ACTIVO) VALUES (
+   'APUESTAS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,REGISTRO_ACTIVO) VALUES (
+                             'APUESTAS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+
+END;
+/
+
+/*AUIDOTORIA BONOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_BONOS
+AFTER INSERT OR UPDATE OR DELETE ON BONOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'BONOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'BONOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'BONOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+/
+
+/*AUIDOTORIA BANCOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_BANCOS
+AFTER INSERT OR UPDATE OR DELETE ON BANCOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'BANCOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'BANCOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'BANCOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+/*AUIDOTORIA CIUDADES*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_CIUDADES
+AFTER INSERT OR UPDATE OR DELETE ON CIUDADES
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'CIUDADES',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'CIUDADES',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'CIUDADES',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+
+
+/*AUIDOTORIA DOCUMENTOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_COMPROBANTES_DOCUMENTOS
+AFTER INSERT OR UPDATE OR DELETE ON COMPROBANTES_DOCUMENTOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'COMPROBANTES_DOCUMENTOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'COMPROBANTES_DOCUMENTOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'COMPROBANTES_DOCUMENTOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+
+/*AUIDOTORIA CRONOGRAMA_PARTIDOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_CRONOGRAMA_PARTIDOS
+AFTER INSERT OR UPDATE OR DELETE ON CRONOGRAMA_PARTIDOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'CRONOGRAMA_PARTIDOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'CRONOGRAMA_PARTIDOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'CRONOGRAMA_PARTIDOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+
+/*AUIDOTORIA DEPARTAMENTOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_DEPARTAMENTOS
+AFTER INSERT OR UPDATE OR DELETE ON DEPARTAMENTOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DEPARTAMENTOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DEPARTAMENTOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'DEPARTAMENTOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+
+/
+
+/*AUIDOTORIA DEPOSITOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_DEPOSITOS
+AFTER INSERT OR UPDATE OR DELETE ON DEPOSITOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DEPOSITOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DEPOSITOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'DEPOSITOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+
+/
+
+/*AUIDOTORIA APUESTA*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_DETALLE_APUESTA
+AFTER INSERT OR UPDATE OR DELETE ON DETALLE_APUESTA
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DETALLE_APUESTA',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'DETALLE_APUESTA',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+                             'DETALLE_APUESTA',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+
+
+/
+
+
+/*AUIDOTORIA EQUIPOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_EQUIPOS
+AFTER INSERT OR UPDATE OR DELETE ON EQUIPOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'EQUIPOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'EQUIPOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'EQUIPOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+/
+/*AUIDOTORIA IDENTIFICACION*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_IDENTIFICACION
+AFTER INSERT OR UPDATE OR DELETE ON IDENTIFICACION
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'IDENTIFICACION',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'IDENTIFICACION',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'IDENTIFICACION',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+/*AUIDOTORIA LEGALES*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_LEGALES
+AFTER INSERT OR UPDATE OR DELETE ON LEGALES
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'LEGALES',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'LEGALES',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'LEGALES',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+
+/*AUIDOTORIA LIMITES_BLOQUEOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_LIMITES_BLOQUEOS
+AFTER INSERT OR UPDATE OR DELETE ON LIMITES_BLOQUEOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'LIMITES_BLOQUEOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'LIMITES_BLOQUEOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'LIMITES_BLOQUEOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+/*AUIDOTORIA MEDIO_PAGO*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_MEDIO_PAGO
+AFTER INSERT OR UPDATE OR DELETE ON MEDIO_PAGO
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'MEDIO_PAGO',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'MEDIO_PAGO',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'MEDIO_PAGO',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+/
+
+/*AUIDOTORIA PAISES*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_PAISES
+AFTER INSERT OR UPDATE OR DELETE ON PAISES
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'PAISES',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'PAISES',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'PAISES',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+/*AUIDOTORIA PREFERENCIAS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_PREFERENCIAS
+AFTER INSERT OR UPDATE OR DELETE ON PREFERENCIAS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'PREFERENCIAS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'PREFERENCIAS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'PREFERENCIAS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+/
+/*AUIDOTORIA RETIROS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_RETIROS
+AFTER INSERT OR UPDATE OR DELETE ON RETIROS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'RETIROS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'RETIROS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'RETIROS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+/
+/*AUIDOTORIA TIPOS_USUARIOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_TIPOS_USUARIOS
+AFTER INSERT OR UPDATE OR DELETE ON TIPOS_APUESTAS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'TIPOS_APUESTAS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'TIPOS_APUESTAS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'TIPOS_APUESTAS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+
+/
+/*AUIDOTORIA USUARIOS*/
+
+CREATE OR REPLACE TRIGGER TG_AUDITORIA_USUARIOS
+AFTER INSERT OR UPDATE OR DELETE ON USUARIOS
+FOR EACH ROW
+BEGIN 
+	
+	IF INSERTING THEN 
+	INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'USUARIOS',:NEW.ID,'INSERCION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+	
+    END IF;
+   
+   	IF UPDATING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+   'USUARIOS',:NEW.ID,'ACTULIZACION',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+   	IF DELETING THEN 
+		INSERT INTO AUDITORIA (TABLA,RECORD_ID,ACTION,USUARIO,IP,registro_activo) VALUES (
+    'USUARIOS',:OLD.ID,'BORRADO',USER,SYS_CONTEXT('USERENV','IP_ADDRESS'),'Y');
+
+    END IF;
+   
+END;
+
+
+
+/
+
+
+/*    trigger ii que   ACTUALIZA SALDO USUARIOS  -    */
+
+
+/*  ACTUALIZA SALDO DESPUES DE UN DEPOSITO */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_DEPOSITO 
+AFTER  INSERT OR UPDATE ON DEPOSITOS 
+FOR EACH ROW 
+WHEN (NEW.ESTADO = 'EXITOSO') 
+DECLARE 
+   saldo_actual number;
+   valor_deposito number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN 
+
+    usuario := :NEW.id_usuario;
+   select saldo into saldo_actual from usuarios where id = usuario;
+   valor_deposito := :NEW.valor;
+   saldo_nuevo := saldo_actual+valor_deposito;
+
+    IF INSERTING THEN 
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	IF UPDATING THEN 
+		 update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	
+    
+END; 
+
+
+/
+
+/*  ACTUALIZA SALDO DESPUES DE UN RETIRO */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_RETIROS 
+AFTER  INSERT OR UPDATE ON RETIROS 
+FOR EACH ROW 
+WHEN (NEW.ESTADO = 'EXITOSO') 
+DECLARE 
+   saldo_actual number;
+   valor_retiro number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN 
+    usuario := :NEW.id_usuario;
+   select saldo into saldo_actual from usuarios where id = usuario;
+   valor_retiro := :NEW.valor;
+   saldo_nuevo := saldo_actual-valor_retiro;
+   
+   IF INSERTING THEN 
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+   	IF UPDATING THEN 
+		 update usuarios set saldo = saldo_nuevo where id=usuario;
+    END IF;
+   
+END; 
+
+/
+
+/*  ACTUALIZA SALDO DESPUES DE UNA APUESTA */
+
+
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_APUESTA
+AFTER  INSERT OR UPDATE ON APUESTAS 
+FOR EACH ROW 
+
+DECLARE 
+   saldo_actual number;
+   valor_apostado number;
+    valor_ganado number;
+   saldo_nuevo number;
+   usuario number;
+BEGIN    
+     usuario := :NEW.id_usuario;
+     valor_apostado :=NVL(:NEW.total,'0');
+     valor_ganado := NVL(:NEW.total_ganado,'0');
+     select saldo into saldo_actual from usuarios where id = usuario;
+     
+     IF INSERTING THEN 
+        
+        if valor_apostado > 0 or valor_ganado >0 then
+            saldo_nuevo := saldo_actual - valor_apostado;
+            saldo_nuevo := saldo_actual + valor_ganado;
+            update usuarios set saldo = saldo_nuevo where id=usuario;
+        end if;
+     
+    END IF;
+   
+   	IF UPDATING THEN 
+		 if  valor_ganado >0 then
+        saldo_nuevo := saldo_actual - valor_apostado;
+        saldo_nuevo := saldo_actual + valor_ganado;
+        update usuarios set saldo = saldo_nuevo where id=usuario;
+     end if;
+    END IF;
+     
+    
+       
+END; 
+
+/
+
+/* ACTUALIZA APUESTAS DESPUES DE  ACTUALIZAR DETALLE APUESTAS */
+
+CREATE OR REPLACE TRIGGER ACTUALIZA_SALDO_DETALLE_APUESTAS
+AFTER  INSERT OR UPDATE ON DETALLE_APUESTA 
+FOR EACH ROW 
+
+DECLARE 
+   det_id_detalle_apuesta number;
+   
+   det_id_apuesta number;
+   total_apuesta_actual number;
+   total_ganado_actual number;
+    det_valor_ganado number;
+    det_valor_apostado number;
+   apuesta_total_nueva number;
+   ganancia_total_nueva number;
+   saldo_actual_usuario number;
+   usuario number;
+   estado varchar2(255);
+   --SELECT * FROM DETALLE_APUESTA;
+   --SELECT * FROM APUESTAS WHERE ID = 2;
+BEGIN    
+    det_id_detalle_apuesta := :NEW.id;
+    det_id_apuesta := :NEW.id_apuesta;
+    select total into total_apuesta_actual from apuestas where id = det_id_apuesta;
+    select total_ganado into total_ganado_actual from apuestas where id = det_id_apuesta;
+    det_valor_ganado := NVL(:NEW.valor_ganado,'0');
+    det_valor_apostado := NVL(:NEW.valor_apostado,'0'); 
+    select id_usuario into usuario from apuestas where  id = det_id_apuesta;
+    select saldo into saldo_actual_usuario from usuarios where  id = usuario;
+    
+     
+     IF INSERTING THEN 
+        IF saldo_actual_usuario >= det_valor_apostado then
+            if estado =  'VENDIDA' then
+                apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
+                update apuestas set total = apuesta_total_nueva where id = det_id_apuesta;            
+            end if;
+            if estado =  'GANADA' then
+                ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
+                update apuestas set total_ganado = ganancia_total_nueva where id = det_id_apuesta;           
+            end if;
+        END IF;
+        IF saldo_actual_usuario < det_valor_apostado then
+            UPDATE DETALLE_APUESTA SET ESTADO = 'RECHAZADA' where  id= det_id_detalle_apuesta;
+        END IF;
+    END IF;
+      
+   	IF UPDATING THEN 
+		 if estado =  'GANADA' then
+                ganancia_total_nueva := det_valor_ganado + total_ganado_actual;
+                update apuestas set total_ganado = ganancia_total_nueva WHERE ID =det_id_apuesta;            
+         end if;
+         if estado =  'REEMBOLSADA' then
+                apuesta_total_nueva := det_valor_apostado + total_apuesta_actual;
+                update apuestas set total = apuesta_total_nueva   where  id= det_id_detalle_apuesta;         
+         end if;
+    END IF;      
+END; 
+
+/
+
+/*
+iii
+Crear un trigger asociado a la tabla PARTIDOS, este trigger se disparará solamente cuando el partido pase a estado "FINALIZADO". 
+El propósito de este trigger es ejecutar el o los procedimientos hechos para liquidar las ganancias y pérdidas de los usuarios 
+que apostaron a ese partido.
+
+*/
+
+CREATE OR REPLACE TRIGGER liquida_ganancias_y_perdidas
+AFTER INSERT or update OF ESTADO ON cronograma_partidos
+
+FOR EACH ROW
+
+WHEN (NEW.ESTADO = 'FINALIZADO')
+DECLARE
+ID_PARTIDO NUMBER;
+CP_ESTADO VARCHAR2(255);
+cp_id_equipo2 number;
+cp_id_equipo1 number;
+cp_equipo_ganador number;
+cp_goles_equipo1 number;
+cp_goles_equipo2 number;
+cp_ganador_tiempo1 number;
+cp_ganador_tiempo2 number;
+cp_goles_tiempo1 number;
+cp_goles_tiempo2 number;
+
+BEGIN
+id_partido := :NEW.ID;
+cp_estado := :NEW.ESTADO;
+cp_id_equipo1 := :NEW.id_equipo1;
+cp_id_equipo2 := :NEW.id_equipo2;
+cp_equipo_ganador :=  :NEW.ganador;
+cp_goles_equipo1 := :NEW.goles_equipo1;
+cp_goles_equipo2 := :NEW.goles_equipo2;
+cp_ganador_tiempo1 := :NEW.ganador_tiempo1;
+cp_ganador_tiempo2 := :NEW.ganador_tiempo2;    
+cp_goles_tiempo1 := :NEW.goles_tiempo1;
+cp_goles_tiempo2 := :NEW.goles_tiempo2;
+
+    
+PROC_FINALIZA_PARTIDO_CALCULOS(id_partido, cp_id_equipo1,cp_id_equipo2,
+    cp_equipo_ganador, cp_goles_equipo1,
+    cp_goles_equipo2,cp_ganador_tiempo1, cp_ganador_tiempo2,
+    cp_goles_tiempo1,cp_goles_tiempo2,cp_estado);
+   
+   
+
+   
+END;
