@@ -8,21 +8,16 @@
 
 
 ***/
-CREATE OR REPLACE PROCEDURE proc_finaliza_partido (
-    id_partido NUMBER
+CREATE OR REPLACE PROCEDURE PROC_FINALIZA_PARTIDO_CALCULOS (
+    id_partido NUMBER, cp_id_equipo1 number,cp_id_equipo2 number,
+    cp_equipo_ganador number, cp_goles_equipo1  number,
+    cp_goles_equipo2 number,cp_ganador_tiempo1 number, cp_ganador_tiempo2 number,
+    cp_goles_tiempo1 number,cp_goles_tiempo2 number,cp_estado varchar2
 ) IS
 
     cambio_estado           VARCHAR2(255);
-    cp_id_equipo1           cronograma_partidos.id_equipo1%TYPE;
-    cp_id_equipo2           cronograma_partidos.id_equipo2%TYPE;
-    cp_equipo_ganador       cronograma_partidos.ganador%TYPE;
-    cp_goles_equipo1        cronograma_partidos.goles_equipo1%TYPE;
-    cp_goles_equipo2        cronograma_partidos.goles_equipo2%TYPE;
-    cp_ganador_tiempo1      cronograma_partidos.ganador_tiempo1%TYPE;
-    cp_ganador_tiempo2      cronograma_partidos.ganador_tiempo2%TYPE;
-    cp_goles_tiempo1        cronograma_partidos.goles_tiempo1%TYPE;
-    cp_goles_tiempo2        cronograma_partidos.goles_tiempo2%TYPE;
-    cp_estado               cronograma_partidos.estado%TYPE;
+    
+   
     ta_id_tipos_apuestas    tipos_apuestas.id%TYPE;
     ta_tipo_apuesta         tipos_apuestas.tipo_apuesta%TYPE;
     ta_id_cronograma        tipos_apuestas.id_cronograma%TYPE;
@@ -87,29 +82,7 @@ CREATE OR REPLACE PROCEDURE proc_finaliza_partido (
 
 BEGIN
     cambio_estado := 'FINALIZADO';
-    SELECT
-        ganador,
-        id_equipo1,
-        id_equipo2,
-        ganador_tiempo1,
-        ganador_tiempo2,
-        goles_tiempo1,
-        goles_tiempo2,
-        estado
-    INTO
-        cp_equipo_ganador,
-        cp_id_equipo1,
-        cp_id_equipo2,
-        cp_ganador_tiempo1,
-        cp_ganador_tiempo2,
-        cp_goles_tiempo1,
-        cp_goles_tiempo2,
-        cp_estado
-    FROM
-        cronograma_partidos
-    WHERE
-        id = id_partido;
-
+   
     IF cp_estado = 'FINALIZADO' THEN
         UPDATE tipos_apuestas
         SET
@@ -1080,8 +1053,8 @@ BEGIN
 END;
 
 
---EXECUTE Proc_Finaliza_Partido(2);
---update cronograma_partidos set estado = 'FINALIZADO' where id = 2;
+--UPDATE CRONOGRAMA_PARTIDOS SET ESTADO = 'FINALIZADO' WHERE ID = 2;
+--EXECUTE PROC_FINALIZA_PARTIDO_CALCULOS(2);
 -- select * from cronograma_partidos;
 --SELECT SALDO FROM USUARIOS WHERE ID = 2;
 --SELECT * FROM APUESTAS WHERE ID_USUARIO = 2;
