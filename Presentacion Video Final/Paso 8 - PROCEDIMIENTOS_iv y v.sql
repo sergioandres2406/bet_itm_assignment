@@ -266,4 +266,4 @@ EXCEPTION
         raise_application_error(-20001, 'EL USUARIO NO TIENE MOVIMIENTOS');
 END;
 
-EXEC sp_validar_movimiento(1, 2, 6)
+EXEC sp_validar_movimiento(2, 2, 6)

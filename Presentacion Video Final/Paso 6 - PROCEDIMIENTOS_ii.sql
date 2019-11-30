@@ -22,5 +22,5 @@ BEGIN
     RAISE_APPLICATION_ERROR(-20001,'LA TABLA NO EXISTE');
 END;
 
-
-EXEC Proc_Soft_Deletion('SESIONESSDF',1);
+-- select * from bancos;
+EXEC Proc_Soft_Deletion('bancos',5);
