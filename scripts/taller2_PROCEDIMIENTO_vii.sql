@@ -1,6 +1,14 @@
+/*
+
+Crear un procedimiento que reciba el ID de una APUESTA (Las que efectuan los usuarios)
+y reciba: id_usuario, valor, tipo_apuesta_id, cuota, opción ganadora (Ya cada uno mirará como manejan esta parte conforme al diseño que tengan). 
+Con estos parámetros deberá insertar un registro en la tabla detalles de apuesta en estado "ABIERTA".
+
+*/
+--select * from tipos_apuestas;
 CREATE OR REPLACE PROCEDURE sp_crear_detalle_apuestas (
-    p_id_apuesta                    detalle_apuesta.id_apuesta%TYPE:=NULL,
-    p_id_tipo_apuesta               detalle_apuesta.id_tipo_apuesta%TYPE:=NULL,
+    p_id_apuesta                   detalle_apuesta.id_apuesta%TYPE,
+    p_id_tipo_apuesta               detalle_apuesta.id_tipo_apuesta%TYPE,
     p_opcion_equipo1                detalle_apuesta.opcion_equipo1%TYPE:=NULL,
     p_opcion_equipo2                detalle_apuesta.opcion_equipo2%TYPE:=NULL,
     p_opcion_empate                 detalle_apuesta.opcion_empate%TYPE:=NULL,
@@ -26,7 +34,7 @@ BEGIN
     FROM
         detalle_apuesta
     WHERE
-        id = p_id_apuesta;
+        id_apuesta = p_id_apuesta;
 
     INSERT INTO detalle_apuesta (
         id_apuesta,
@@ -77,3 +85,13 @@ EXCEPTION
         raise_application_error(-20001, 'APUESTA NO EXISTE');
 END;
 
+/*
+select * from apuestas;
+select * from usuarios;
+select  * from tipos_apuestas;
+select * from detalle_apuesta;
+*/
+/*
+execute sp_crear_detalle_apuestas(2,3,'N', 'N', 'N','Y','N','N','N',21000,0,0,0 ,0, 4, 0,0,0);
+       
+/*

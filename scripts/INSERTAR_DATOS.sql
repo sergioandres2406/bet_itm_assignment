@@ -296,6 +296,11 @@ values
 (2,'SIMPLE',2,4,'PENDIENTE','Y');
 
 insert into tipos_apuestas 
+(id_cronograma,tipo_apuesta,porcentaje_si,porcentaje_no,estado, registro_activo)
+values
+(2,'AMBOS ANOTAN GOL',4,3,'PENDIENTE','Y');
+
+insert into tipos_apuestas 
 (id_cronograma,tipo_apuesta,porcentaje_equipo1,porcentaje_equipo2,estado, registro_activo)
 values
 (3,'SIMPLE',3,1,'PENDIENTE','Y');
