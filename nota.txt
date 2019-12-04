@@ -1,0 +1,49 @@
+Ramirez Durango Jadison Yulian
+Vásquez Sepúlveda Sergio Andrés 
+Fonnegra Yepes Cristian Alonso
+
+1. Vistas (1.0): 1.0
+
+GANADORES_SEMANALES (0.25): 0.25
+DETALLES_APUESTAS (0.25): 0.25
+RESUMEN_APUESTAS (0.25): 0.25
+SESIONES_ACTIVAS (0.25): 0.25
+
+2. Trigger (1.0): 1.0
+
+AUDITORIA (0.25): 0.25
+SALARIO_ACTUALIZADO (0.25): 0.25
+PARTIDO FINALIZADO (0.25): 0.25
+DETALLES_APUESTAS (0.25): 0.25
+
+3. Procedimientos Almacenados (1.0): 1.0
+
+Usuario logueado en sistema (0.1): 0.1
+Soft deletion (0.1): 0.1
+Partido finalizado (0.1): 0.1
+Retiro Ganancias (0.1): 0.1
+Depósitos (0.1): 0.1
+Sesiones activas (0.1): 0.1
+Apuestas abiertas (0.1): 0.1
+Cuota ganadora (0.3): 0.3
+
+4. Artículos (1.0): 1.0
+
+Timezones (0.33): 0.33
+Netflix (0.33): 0.33
+Uber (0.33): 0.33
+
+5. Video (1.0): 0.9
+
+Calidad del video (0.2): 0.2
+Calidad del sonido (0.2): 0.2
+Tiempo menor o igual a 30 minutos (0.4): 0.3
+Hablan todos los integrantes: NO
+  Cristian Fonnegra: Nota definitiva - 1.5
+  Jadison Ramirez: Nota definitiva - 1.5
+Repositorio con todos los archivos organizados y fáciles de encontrar (0.2): 0.2
+
+Nota: 4.9
+
+Nota Jadison Ramirez: 3.4
+Nota Cristian Fonnegra: 3.4
